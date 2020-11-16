@@ -1,0 +1,32 @@
+{
+  "name": "goit-group_14-filmoteka",
+  "version": "1.0.0",
+  "description": "Team project",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel src/*.html",
+    "build": "parcel build src/*.html",
+    "predeploy": "npm run build -- --public-url /goit-group_14-filmoteka/",
+    "deploy": "gh-pages -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mykhailoiskra/goit-group_14-filmoteka.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mykhailoiskra/goit-group_14-filmoteka/issues"
+  },
+  "homepage": "https://github.com/Mykhailoiskra/goit-group_14-filmoteka#readme",
+  "devDependencies": {
+    "gh-pages": "^3.1.0",
+    "parcel-bundler": "^1.12.4",
+    "posthtml-include": "^1.4.3",
+    "sass": "^1.26.9"
+  },
+  "dependencies": {
+    "parcel-plugin-handlebars-precompile": "^1.0.2"
+  }
+}
