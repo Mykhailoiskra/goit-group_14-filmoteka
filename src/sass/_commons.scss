@@ -1,0 +1,33 @@
+// Основные цвета на для текста
+$mainColor: #000000;
+$accentColor: #ff6b01;
+
+// Цвет для текста в хедере
+$headerMainColor: #ffffff;
+
+// Шрифт
+$mainFont: 'Roboto', sans-serif;
+
+// Ширины для адаптивной верстки
+$mobile: 320px;
+$tablet: 768px;
+$desktop: 1024px;
+
+// Утилиты
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
