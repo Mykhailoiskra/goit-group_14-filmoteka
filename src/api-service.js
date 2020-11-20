@@ -1,4 +1,4 @@
-export default apiService;
+
 // !! Увага, API не дозволяє встановлювати значення per-page !!
 
 //      FT-07 Реализовать подгрузку популярных фильмов на главную (первую) страницу
@@ -25,8 +25,7 @@ class ApiService {
       this.options,
     )
       .then(r => this.checkResponse(r))
-      .then(({ results }) => console.log(results))
-      .catch(console.log('request error'));
+      .then(({ results }) => results);
   }
   fetchMoviesByKeyWords(keyWords) {
     this.setSearchQuery(keyWords);
@@ -35,7 +34,7 @@ class ApiService {
       this.options,
     )
       .then(r => r.json())
-      .then(({ results }) => console.log(results));
+      .then(({ results }) => results);
   }
   setSearchQuery(keyString) {
     this.searchQuery = keyString.toLowerCase().split(' ').join('+');
@@ -49,4 +48,5 @@ class ApiService {
   }
 }
 
-const apiService = new ApiService();
+
+export default ApiService;
