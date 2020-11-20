@@ -9,7 +9,7 @@
 .header-container {
   display: flex;
   // min-width: 100%;
-  padding: 0 71px;
+  // padding: 0 71px;
   box-sizing: border-box;
   margin-left: auto;
   margin-right: auto;
@@ -19,6 +19,21 @@
   // align-items: center;
   align-items: end;
   background-image: url(../img/overlay.jpg);
+  @media screen and (min-width: 320px) {
+    background-image: url('../img/onerlay_768.jpg');
+    max-width: 320px;
+    padding: 0 21px;
+  }
+
+  @media screen and (min-width: 768px) {
+    background-image: url('../img/Overlay_320.jpg');
+    max-width: 1023px;
+    // padding: 0 75px;
+  }
+  @media screen and (min-width: 1024px) {
+    max-width: 1024px;
+    // padding: 0 71px
+  }
 }
 
 .header-link {
