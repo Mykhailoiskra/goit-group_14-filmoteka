@@ -3,23 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Заголовок страницы</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css"
-      integrity="sha512-ISS7cAi1PEhQ8jnbJpJZMd29NlhNj4AWYyLOSp2CE/CsHxTCu+r+t0D2yoJudVrd0/8fTVPUVDzY5Tvli75u/g=="
-      crossorigin="anonymous"
-    />
+    <title>MY LIBRARY</title>
   </head>
 
   <body>
     <header class="header">
-      <div class="header-container">
+      <div class="header-library-container">
         <div class="logo-container">
           <a class="header-link" href="./index.html">
             <img
@@ -32,27 +21,20 @@
             <h1 class="header-text">Filmoteka</h1>
           </a>
         </div>
-        <form class="header-form">
-          <div class="group">
-            <input
-              type="text"
-              required
-              type="text"
-              name="query"
-              placeholder="Movie search"
-            />
-            <span class="bar"></span>
-          </div>
-        </form>
+        <!-- кнопки предпочтений -->
+        <nav class="preference-buttons">
+          < class="header-watched" type="button">Watched</>
 
+          <button class="header-queue" type="button">queue</button>
+        </nav>
+
+        <!-- ////////////////////////////// -->
         <nav class="nav-container">
-          <!-- Форма для перехода по кнопке на нужную страницу -->
-          <!-- <form action="./index.html"> -->
-          <button class="header-home current" type="button">HOME</button>
-          <!-- </form> -->
-          <!-- <form action="./html/My_Library.html"> -->
-          <button class="header-library" type="button">MY LIBRARY</button>
-          <!-- </form> -->
+          <button class="header-home" type="button">HOME</button>
+
+          <button class="header-library current" type="button">
+            MY LIBRARY
+          </button>
         </nav>
       </div>
     </header>
@@ -60,11 +42,7 @@
       <section>
         <div class="main-container">
           <ul class="home-list">
-            <li
-              class="home-list-card"
-              data-aos="zoom-out-right"
-              data-aos-delay="250"
-            >
+            <li class="home-list-card">
               <img
                 class="home-list-img"
                 src="./img/example.jpg"
@@ -73,7 +51,10 @@
                 data-vote=""
               />
               <p class="home-card-title">GREYHOUND</p>
-              <p class="home-card-сategory">Drama, Action | 2020</p>
+              <div class="card-list">
+                <p class="home-card-сategory">Drama, Action | 2020</p>
+                <p class="home-card-rating">9.0</p>
+              </div>
             </li>
 
             <li class="home-list-card">
@@ -85,7 +66,10 @@
                 data-vote=""
               />
               <p class="home-card-title">GREYHOUND</p>
-              <p class="home-card-сategory">Drama, Action | 2020</p>
+              <div class="card-list">
+                <p class="home-card-сategory">Drama, Action | 2020</p>
+                <p class="home-card-rating">10.0</p>
+              </div>
             </li>
 
             <li class="home-list-card">
@@ -97,7 +81,10 @@
                 data-vote=""
               />
               <p class="home-card-title">GREYHOUND</p>
-              <p class="home-card-сategory">Drama, Action | 2020</p>
+              <div class="card-list">
+                <p class="home-card-сategory">Drama, Action | 2020</p>
+                <p class="home-card-rating">10.0</p>
+              </div>
             </li>
 
             <li class="home-list-card">
@@ -109,7 +96,10 @@
                 data-vote=""
               />
               <p class="home-card-title">GREYHOUND</p>
-              <p class="home-card-сategory">Drama, Action | 2020</p>
+              <div class="card-list">
+                <p class="home-card-сategory">Drama, Action | 2020</p>
+                <p class="home-card-rating">10.0</p>
+              </div>
             </li>
 
             <li class="home-list-card">
@@ -121,7 +111,10 @@
                 data-vote=""
               />
               <p class="home-card-title">GREYHOUND</p>
-              <p class="home-card-сategory">Drama, Action | 2020</p>
+              <div class="card-list">
+                <p class="home-card-сategory">Drama, Action | 2020</p>
+                <p class="home-card-rating">10.0</p>
+              </div>
             </li>
 
             <li class="home-list-card">
@@ -133,7 +126,10 @@
                 data-vote=""
               />
               <p class="home-card-title">GREYHOUND</p>
-              <p class="home-card-сategory">Drama, Action | 2020</p>
+              <div class="card-list">
+                <p class="home-card-сategory">Drama, Action | 2020</p>
+                <p class="home-card-rating">10.0</p>
+              </div>
             </li>
 
             <li class="home-list-card">
@@ -145,7 +141,10 @@
                 data-vote=""
               />
               <p class="home-card-title">GREYHOUND</p>
-              <p class="home-card-сategory">Drama, Action | 2020</p>
+              <div class="card-list">
+                <p class="home-card-сategory">Drama, Action | 2020</p>
+                <p class="home-card-rating">10.0</p>
+              </div>
             </li>
 
             <li class="home-list-card">
@@ -157,7 +156,10 @@
                 data-vote=""
               />
               <p class="home-card-title">GREYHOUND</p>
-              <p class="home-card-сategory">Drama, Action | 2020</p>
+              <div class="card-list">
+                <p class="home-card-сategory">Drama, Action | 2020</p>
+                <p class="home-card-rating">10.0</p>
+              </div>
             </li>
 
             <li class="home-list-card">
@@ -169,7 +171,10 @@
                 data-vote=""
               />
               <p class="home-card-title">GREYHOUND</p>
-              <p class="home-card-сategory">Drama, Action | 2020</p>
+              <div class="card-list">
+                <p class="home-card-сategory">Drama, Action | 2020</p>
+                <p class="home-card-rating">10.0</p>
+              </div>
             </li>
           </ul>
         </div>

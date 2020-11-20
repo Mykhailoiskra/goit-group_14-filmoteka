@@ -1,0 +1,115 @@
+.header-library-container {
+  display: flex;
+  // min-width: 100%;
+  padding: 0 71px;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1024px;
+  height: 230px;
+  justify-content: space-between;
+  // align-items: center;
+  align-items: end;
+  background-image: url(../img/my-library-img.jpg);
+}
+
+.preference-buttons {
+  margin-top: 121px;
+}
+
+.header-watched {
+  width: 136px;
+  height: 44px;
+  cursor: pointer;
+  color: $headerMainColor;
+  padding: 14px 0;
+  margin-right: 15px;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 5px;
+  border: 1px solid $headerMainColor;
+  box-sizing: border-box;
+  // outline: none;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.header-watched:hover,
+.header-queue:hover,
+.header-watched:focus,
+.header-queue:focus,
+.header-watched:active,
+.header-queue:active {
+  background: $accentColor;
+  border: $accentColor;
+  outline: none;
+
+  animation: header-watched 0.5s linear infinite both;
+}
+
+@keyframes header-watched {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(2px, -2px);
+  }
+  40% {
+    transform: translate(2px, 2px);
+  }
+  60% {
+    transform: translate(-2px, 2px);
+  }
+  80% {
+    transform: translate(-2px, -2px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+.header-queue {
+  width: 136px;
+  height: 44px;
+  text-align: center;
+  cursor: pointer;
+  color: $headerMainColor;
+  padding: 14px 0;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 5px;
+  border: 1px solid $headerMainColor;
+  box-sizing: border-box;
+  // outline: none;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.home-card-rating {
+  width: 36px;
+  height: 16px;
+  margin-left: 10px;
+  color: $headerMainColor;
+  background-color: $accentColor;
+  border-radius: 5px;
+
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.7;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+}
+
+
+.card-list {
+    display: flex;
+}
