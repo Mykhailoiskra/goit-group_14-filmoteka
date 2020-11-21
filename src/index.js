@@ -2,6 +2,7 @@ import './sass/main.scss';
 import './api-service.js';
 import ApiService from './api-service.js';
 import movieCards from './templates/movie-card.hbs';
+import movieInfo from './templates/movie-info.hbs';
 
 const apiService = new ApiService();
 const debounce = require('lodash.debounce');
@@ -18,21 +19,24 @@ const refs = {
   btnAddToWatched: document.querySelector('[data-action="add-to-watched"]'),
   btnAddToQueue: document.querySelector('[data-action="add-to-queue"]'),
 };
+
 let watchedArray = localStorage.getItem('WATCHED_KEY')
   ? JSON.parse(localStorage.getItem('WATCHED_KEY'))
   : [];
 let queueArray = localStorage.getItem('QUEUE_KEY')
   ? JSON.parse(localStorage.getItem('QUEUE_KEY'))
-  : [];
+    : [];
+  
+    // слушатели добавлять при открытии большой карточки фильма и снимать при закрытии
+// при нажимании на любую из этих кнопок она далжна становиться неактивной
+// refs.btnAddToWatched.addEventListener('click', addToWatched);
+// refs.btnAddToQueue.addEventListener('click', addToQueue);
 
 window.addEventListener('load', onLoad());
 queryInputRef.addEventListener('input', debounce(onQueryInput, 1000));
 moviesList.addEventListener('click', onMovieClick);
 
-// слушатели добавлять при открытии большой карточки фильма и снимать при закрытии
-// при нажимании на любую из этих кнопок она далжна становиться неактивной
-refs.btnAddToWatched.addEventListener('click', addToWatched);
-refs.btnAddToQueue.addEventListener('click', addToQueue);
+
 
 function onLoad() {
   // apiService.fetchPopMovies().then((results) => makeMovieCardsMarkup(results));
@@ -63,6 +67,12 @@ function onMovieClick(event) {
         return
     }
     openModalWindow();
+    renderMovieInfo(event.target.dataset.id);
+    window.scrollTo({
+  top: 230,
+  left: 0,
+  behavior: 'smooth'
+});
     
 }
 
@@ -103,20 +113,30 @@ function openModalWindow() {
     modalWindow.classList.remove("visually-hidden");
     modalWindow.addEventListener('click', onOverlayClick);
     window.addEventListener("keydown", onKeysPress);
+
+
 }
 function closeModalWindow() {
     modalWindow.classList.add("visually-hidden");
     modalWindow.removeEventListener('click', onOverlayClick);
     window.removeEventListener("keydown", onKeysPress);
+    modalWindow.innerHTML = '';
 }
 function onOverlayClick(evt) {
   if (evt.target === evt.currentTarget) {
     closeModalWindow();
-  }
+    }
 }
 
 function onKeysPress(evt) {
     if (evt.code === "Escape") {
         closeModalWindow();
     }
+}
+
+function renderMovieInfo(movieID) {
+    apiService.fetchMovieById(movieID).then((result) => {
+        modalWindow.innerHTML = movieInfo(result);
+        console.log(result);
+    })
 }
