@@ -1,3 +1,22 @@
 .pagination-buttons {
   text-align: center;
+  margin-top: 50px;
+}
+
+.pagination-buttons__item {
+  width: 40px;
+  height: 40px;
+  outline: none;
+  background-color: #fff;
+  border: none;
+  border-radius: 5px;
+
+  font-size: 12px;
+  line-height: 15px;
+  color: $mainColor;
+  &:hover {
+    background-color: $accentColor;
+    color: #ffffff;
+    cursor: pointer;
+  }
 }
