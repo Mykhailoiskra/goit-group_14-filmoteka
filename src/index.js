@@ -6,11 +6,8 @@ import movieCards from './templates/movie-card.hbs';
 const apiService = new ApiService();
 const debounce = require('lodash.debounce');
 const moviesList = document.querySelector('.home-list');
-<<<<<<< Updated upstream
-=======
 const modalWindow = document.querySelector('[data-modal]');
 const queryWornRef = document.querySelector('.query-warning');
->>>>>>> Stashed changes
 const queryInputRef = document.getElementById('query-input');
 
 // Необходимо повесить дата атрибут data-action="add-to-watched" на одноименную кнопку фильма,
@@ -30,10 +27,7 @@ let queueArray = localStorage.getItem('QUEUE_KEY')
   : [];
 
 window.addEventListener('load', onLoad());
-<<<<<<< Updated upstream
-=======
 moviesList.addEventListener('click', onMovieClick);
->>>>>>> Stashed changes
 queryInputRef.addEventListener('input', debounce(onQueryInput, 1000));
 
 // слушатели добавлять при открытии большой карточки фильма и снимать при закрытии
@@ -67,16 +61,12 @@ function onQueryInput(e) {
       .then(results => makeMovieCardsMarkup(results));
   }
 }
-<<<<<<< Updated upstream
-=======
 function onMovieClick(event) {
   if (event.target.nodeName !== 'IMG') {
     return;
   }
   openModalWindow();
 }
-
->>>>>>> Stashed changes
 function makeMovieCardsMarkup(results) {
   const markup = movieCards(results);
   moviesList.innerHTML = markup;
@@ -106,14 +96,9 @@ function addToWatched(e) {
 }
 function addToQueue(e) {
   const filmName = e.currentTarget.dataset.id;
-
   queueArray = [queueArray];
   queueArray.push(`${filmName}`);
-<<<<<<< Updated upstream
-
   localStorage.setItem('QUEUE_KEY', JSON.stringify(`${queueArray}`));
-=======
-
   localStorage.setItem('QUEUE_KEY', JSON.stringify(`${queueArray}`));
 }
 
@@ -137,5 +122,4 @@ function onKeysPress(evt) {
   if (evt.code === 'Escape') {
     closeModalWindow();
   }
->>>>>>> Stashed changes
 }
