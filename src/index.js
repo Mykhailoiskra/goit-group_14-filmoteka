@@ -117,6 +117,6 @@ function onOverlayClick(evt) {
 
 function onKeysPress(evt) {
     if (evt.code === "Escape") {
-    closeModalWindow();
-  }
-
+        closeModalWindow();
+    }
+}
