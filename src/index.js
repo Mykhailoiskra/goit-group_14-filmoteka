@@ -8,7 +8,9 @@ const debounce = require('lodash.debounce');
 const moviesList = document.querySelector('.home-list');
 const queryInputRef = document.getElementById('query-input');
 const modalWindow = document.querySelector('[data-modal]');
-
+const paginationContainer = document.getElementsByClassName(
+  'pagination-buttons',
+)[0];
 
 // Необходимо повесить дата атрибут data-action="add-to-watched" на одноименную кнопку фильма,
 // data-action="add-to-queue" на одноименную кнопку фильма.
@@ -36,12 +38,64 @@ refs.btnAddToQueue.addEventListener('click', addToQueue);
 
 function onLoad() {
   // apiService.fetchPopMovies().then((results) => makeMovieCardsMarkup(results));
+  apiService.queryPage = new URLSearchParams(window.location.search).get(
+    'page',
+  );
   Promise.all([apiService.fetchPopMovies(), apiService.fetchGenres()])
     .then(([movies, genres]) => {
       const formatedMoviesWithGenreNames = renderGenres(genres, movies);
       return formatedMoviesWithGenreNames;
     })
     .then(results => makeMovieCardsMarkup(results));
+
+  const paginationLength = 20;
+
+  paginationContainer.innerHTML =
+    '<button class="pagination-buttons__item"><-</button>' +
+    Array.from(new Array(paginationLength))
+      .map(
+        (_, i) => `
+
+      <button class="pagination-buttons__item">${i + 1}</button>
+      
+    `,
+      )
+      .join('') +
+    '<button class="pagination-buttons__item">-></button>';
+  const queryParams = new URLSearchParams(window.location.search);
+  if (!queryParams.toString())
+    history.replaceState(null, null, window.location.pathname);
+  const allButtons = Array.prototype.slice.call(
+    document.getElementsByClassName('pagination-buttons__item'),
+  );
+  allButtons.slice(1, -1).map(el => {
+    el.onclick = function () {
+      el.textContent === '1'
+        ? queryParams.delete('page')
+        : queryParams.set('page', el.textContent);
+      window.location.search = queryParams.toString();
+    };
+  });
+  [allButtons[0], allButtons[allButtons.length - 1]].map((el, i) => {
+    const currentPage = +queryParams.get('page');
+    if ((currentPage > 1 && !i) || (currentPage < paginationLength && i)) {
+      el.onclick = function () {
+        if (currentPage === 2 && !i) {
+          queryParams.delete('page');
+        } else {
+          if (i) {
+            queryParams.set(
+              'page',
+              queryParams.get('page') ? currentPage + 1 : currentPage + 2,
+            );
+          } else {
+            queryParams.set('page', i ? currentPage + 1 : currentPage - 1);
+          }
+        }
+        window.location.search = queryParams.toString();
+      };
+    }
+  });
 }
 function onQueryInput(e) {
   e.preventDefault();
@@ -63,7 +117,6 @@ function onMovieClick(event) {
         return
     }
     openModalWindow();
-    
 }
 
 function makeMovieCardsMarkup(results) {
