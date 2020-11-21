@@ -6,6 +6,11 @@ import movieCards from './templates/movie-card.hbs';
 const apiService = new ApiService();
 const debounce = require('lodash.debounce');
 const moviesList = document.querySelector('.home-list');
+<<<<<<< Updated upstream
+=======
+const modalWindow = document.querySelector('[data-modal]');
+const queryWornRef = document.querySelector('.query-warning');
+>>>>>>> Stashed changes
 const queryInputRef = document.getElementById('query-input');
 
 // Необходимо повесить дата атрибут data-action="add-to-watched" на одноименную кнопку фильма,
@@ -16,6 +21,7 @@ const refs = {
   btnAddToWatched: document.querySelector('[data-action="add-to-watched"]'),
   btnAddToQueue: document.querySelector('[data-action="add-to-queue"]'),
 };
+
 let watchedArray = localStorage.getItem('WATCHED_KEY')
   ? JSON.parse(localStorage.getItem('WATCHED_KEY'))
   : [];
@@ -24,6 +30,10 @@ let queueArray = localStorage.getItem('QUEUE_KEY')
   : [];
 
 window.addEventListener('load', onLoad());
+<<<<<<< Updated upstream
+=======
+moviesList.addEventListener('click', onMovieClick);
+>>>>>>> Stashed changes
 queryInputRef.addEventListener('input', debounce(onQueryInput, 1000));
 
 // слушатели добавлять при открытии большой карточки фильма и снимать при закрытии
@@ -42,18 +52,31 @@ function onLoad() {
 }
 function onQueryInput(e) {
   e.preventDefault();
+  queryWornRef.classList.add('visually-hidden');
   if (e.target.value.length > 0) {
     Promise.all([
       apiService.fetchMoviesByKeyWords(e.target.value),
       apiService.fetchGenres(),
     ])
       .then(([movies, genres]) => {
-        const formatedMoviesWithGenreNames = renderGenres(genres, movies);
-        return formatedMoviesWithGenreNames;
+        if (movies.length > 0) {
+          const formatedMoviesWithGenreNames = renderGenres(genres, movies);
+          return formatedMoviesWithGenreNames;
+        } else queryWornRef.classList.remove('visually-hidden');
       })
       .then(results => makeMovieCardsMarkup(results));
   }
 }
+<<<<<<< Updated upstream
+=======
+function onMovieClick(event) {
+  if (event.target.nodeName !== 'IMG') {
+    return;
+  }
+  openModalWindow();
+}
+
+>>>>>>> Stashed changes
 function makeMovieCardsMarkup(results) {
   const markup = movieCards(results);
   moviesList.innerHTML = markup;
@@ -86,6 +109,33 @@ function addToQueue(e) {
 
   queueArray = [queueArray];
   queueArray.push(`${filmName}`);
+<<<<<<< Updated upstream
 
   localStorage.setItem('QUEUE_KEY', JSON.stringify(`${queueArray}`));
+=======
+
+  localStorage.setItem('QUEUE_KEY', JSON.stringify(`${queueArray}`));
+}
+
+function openModalWindow() {
+  modalWindow.classList.remove('visually-hidden');
+  modalWindow.addEventListener('click', onOverlayClick);
+  window.addEventListener('keydown', onKeysPress);
+}
+function closeModalWindow() {
+  modalWindow.classList.add('visually-hidden');
+  modalWindow.removeEventListener('click', onOverlayClick);
+  window.removeEventListener('keydown', onKeysPress);
+}
+function onOverlayClick(evt) {
+  if (evt.target === evt.currentTarget) {
+    closeModalWindow();
+  }
+}
+
+function onKeysPress(evt) {
+  if (evt.code === 'Escape') {
+    closeModalWindow();
+  }
+>>>>>>> Stashed changes
 }
