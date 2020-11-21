@@ -7,6 +7,8 @@ const apiService = new ApiService();
 const debounce = require('lodash.debounce');
 const moviesList = document.querySelector('.home-list');
 const queryInputRef = document.getElementById('query-input');
+const modalWindow = document.querySelector('[data-modal]');
+
 
 // Необходимо повесить дата атрибут data-action="add-to-watched" на одноименную кнопку фильма,
 // data-action="add-to-queue" на одноименную кнопку фильма.
@@ -25,6 +27,7 @@ let queueArray = localStorage.getItem('QUEUE_KEY')
 
 window.addEventListener('load', onLoad());
 queryInputRef.addEventListener('input', debounce(onQueryInput, 1000));
+moviesList.addEventListener('click', onMovieClick);
 
 // слушатели добавлять при открытии большой карточки фильма и снимать при закрытии
 // при нажимании на любую из этих кнопок она далжна становиться неактивной
@@ -54,6 +57,15 @@ function onQueryInput(e) {
       .then(results => makeMovieCardsMarkup(results));
   }
 }
+
+function onMovieClick(event) {
+     if (event.target.nodeName !== 'IMG') {
+        return
+    }
+    openModalWindow();
+    
+}
+
 function makeMovieCardsMarkup(results) {
   const markup = movieCards(results);
   moviesList.innerHTML = markup;
@@ -83,9 +95,28 @@ function addToWatched(e) {
 }
 function addToQueue(e) {
   const filmName = e.currentTarget.dataset.id;
-
   queueArray = [queueArray];
   queueArray.push(`${filmName}`);
+  localStorage.setItem('QUEUE_KEY', JSON.stringify(`${queueArray}`));}
 
-  localStorage.setItem('QUEUE_KEY', JSON.stringify(`${queueArray}`));
+function openModalWindow() {
+    modalWindow.classList.remove("visually-hidden");
+    modalWindow.addEventListener('click', onOverlayClick);
+    window.addEventListener("keydown", onKeysPress);
 }
+function closeModalWindow() {
+    modalWindow.classList.add("visually-hidden");
+    modalWindow.removeEventListener('click', onOverlayClick);
+    window.removeEventListener("keydown", onKeysPress);
+}
+function onOverlayClick(evt) {
+  if (evt.target === evt.currentTarget) {
+    closeModalWindow();
+  }
+}
+
+function onKeysPress(evt) {
+    if (evt.code === "Escape") {
+    closeModalWindow();
+  }
+
