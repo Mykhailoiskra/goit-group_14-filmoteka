@@ -16,7 +16,8 @@
       crossorigin="anonymous"
     />
   </head>
-
+    <!-- Скрипт идёт последним в разметке. В нём уже подключен главный SASS-файл. -->
+=======
   <body>
     <header class="header">
       <div class="header-container">
@@ -74,6 +75,13 @@
         </p>
       </div>
     </footer>
+        <!-- Так добавляются фрагменты в главные HTML-файлы страниц. -->
+    <include src="./partials/example.html"></include>
+    <button type="button" class="btn btn-primary button" data-action="watched" data-id="566577"><span class="label">ADD TO WATCHED</span>
+    </button>
+    <button type="button" class="btn btn-primary button" data-action="queue" data-id="566574"><span class="label" >add to queue</span>
+    </button>
+
     <script src="./index.js"></script>
   </body>
 </html>
