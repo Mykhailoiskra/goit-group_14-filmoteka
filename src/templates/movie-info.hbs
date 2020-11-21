@@ -1,0 +1,42 @@
+<div class="card-details-markup">
+    <div class="card-details-img">
+        <img src="https://image.tmdb.org/t/p/w400{{poster_path}}" alt="{{title}}" class="card-image" />
+    </div>
+    <div class="card-details-info">
+        <h2 class="card-details-title">{{title}}</h2>
+        <ul class="card-details-list">
+            <li class="card-details-item">
+                <p class="card-details-item-about">Vote / Votes</p>
+                <p class="card-details-item-descript">
+                    <span class="card-details-item-vote">{{vote_average}}</span>
+                    <span>/</span>
+                    <span class="card-details-item-votes">{{vote_count}}</span>
+                </p>
+            </li>
+            <li class="card-details-item">
+                <p class="card-details-item-about">Popularity</p>
+                <p class="card-details-item-descript">{{popularity}}</p>
+            </li>
+            <li class="card-details-item">
+                <p class="card-details-item-about">Original Title</p>
+
+                <p class="card-details-item-descript">{{original_title}}</p>
+            </li>
+            <li class="card-details-item">
+                <p class="card-details-item-about">Genre</p>
+                <p class="card-details-item-descript">
+                    {{#each genres}}
+                    <span class="card-details-item-genre">{{name}}, </span>
+                    {{/each}}
+                </p>
+            </li>
+        </ul>
+        <p class="card-details-descript-title">About</p>
+        <p class="card-details-descript-about">{{overview}}</p>
+        <div class="card-details-button-markup">
+            <button class="modal-btn" data-action="add-to-watched" type="button" data-id="{{id}}">add to
+                watched</button>
+            <button class="modal-btn" data-action="add-to-queue" type="button" data-id="{{id}}">add to queue</button>
+        </div>
+    </div>
+</div>
