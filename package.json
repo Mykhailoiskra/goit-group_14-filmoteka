@@ -7,7 +7,7 @@
     "dev": "npm run cleanup && parcel src/*.html",
     "build": "parcel build src/*.html",
     "predeploy": "npm run build -- --public-url /goit-group_14-filmoteka/",
-    "deploy": "gh-pages -d dist", 
+    "deploy": "gh-pages -d dist",
     "cleanup": "rm -rf .cache dist"
   },
   "repository": {
@@ -24,10 +24,11 @@
   "devDependencies": {
     "gh-pages": "^3.1.0",
     "parcel-bundler": "^1.12.4",
+    "parcel-plugin-handlebars-precompile": "^1.0.2",
     "posthtml-include": "^1.4.3",
     "sass": "^1.26.9"
   },
   "dependencies": {
-    "parcel-plugin-handlebars-precompile": "^1.0.2"
+    "lodash.debounce": "^4.0.8"
   }
 }
