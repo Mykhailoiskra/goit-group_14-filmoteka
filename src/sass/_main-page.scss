@@ -1,3 +1,7 @@
+.main {
+  position: relative;
+}
+
 .main-container {
   display: flex;
   padding: 0 71px;
@@ -26,7 +30,6 @@
 }
 
 .home-list-card {
-
   // width: calc((100% - 30px * 2) / 3);
   // margin-right: 30px;
   margin-bottom: 31px;
@@ -53,35 +56,7 @@
       margin-right: 0;
     }
   }
-
-  // &:not(:last-child) {
-  //   @media screen and (max-width: 76px) {
-  //     margin-bottom: 20px;
-  //     margin-right: 0;
-  //   }
-  // }
-
-  // @media screen and (min-width: $tablet) {
-  //   width: calc((100% - 30px * 2) / 2);
-  // }
-
-  // &:nth-last-child(-n + 2) {
-  //   @media screen and (max-width: $tablet - 1) {
-
-  //   }
-  // }
-
-  // @media screen and (min-width: $desktop) {
-  //   width: calc((100% - 30px * 3) / 3);
-  // }
 }
-
-// @media screen and (min-width: $desktop) {
-//   .home-list-card:nth-last-child(-n + 2) {
-//     margin-bottom: 0;
-//   }
-// }
-
 .home-list-card:nth-child(3n) {
   margin-right: 0;
 }
@@ -89,6 +64,7 @@
 .home-list-card:hover,
 .home-list-card:focus {
   transform: scale(1.05);
+  cursor: pointer;
 }
 
 .home-card-title {
@@ -112,12 +88,12 @@
   color: $accentColor;
 }
 
-
 .home-card-name {
   text-align: left;
   flex-grow: 1;
-  width: 274px;}
-=======
+  width: 274px;
+}
+
 .home-card-rating {
   margin-top: 0;
   margin-bottom: 0;
