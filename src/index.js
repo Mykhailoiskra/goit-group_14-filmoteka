@@ -73,3 +73,14 @@ function addToQueue(e) {
         localStorage.setItem('QUEUE_KEY', JSON.stringify(`${queueArray}`))
     }
 
+// Spinner
+const loader = new Loader({
+    selector: '[data-action="loader"]',
+    hidden: true,
+});
+
+function enable() {
+    loader.classList.add('visually-hidden')};
+function disable() {
+    loader.classList.remove('is-hidden')};
+  
