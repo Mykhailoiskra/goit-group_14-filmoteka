@@ -1,8 +1,6 @@
 .main-container {
   display: flex;
-  // min-width: 100%;
   padding: 0 71px;
-  box-sizing: border-box;
   margin-left: auto;
   margin-right: auto;
   // width: 1024px;
@@ -24,13 +22,16 @@
   padding-top: 60px;
   display: flex;
   flex-wrap: wrap;
+  margin: -15px;
 }
 
 .home-list-card {
+
   // width: calc((100% - 30px * 2) / 3);
   // margin-right: 30px;
   margin-bottom: 31px;
   // height: 274px;
+
   transition: transform 1000ms cubic-bezier(0.4, 0, 0.2, 1);
 
   @media screen and (max-width: 767px) {
@@ -105,12 +106,19 @@
   font-weight: 500;
   font-size: 12px;
   line-height: 1.17;
+  margin-top: 0;
+  margin-bottom: 0;
 
   color: $accentColor;
 }
 
+
 .home-card-name {
   text-align: left;
   flex-grow: 1;
-  width: 274px;
+  width: 274px;}
+=======
+.home-card-rating {
+  margin-top: 0;
+  margin-bottom: 0;
 }
