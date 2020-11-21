@@ -1,4 +1,3 @@
-
 // !! Увага, API не дозволяє встановлювати значення per-page !!
 
 //      FT-07 Реализовать подгрузку популярных фильмов на главную (первую) страницу
@@ -8,7 +7,8 @@
 // apiService.fetchMoviesByKeyWords() Приймає keyString з ключовими словами, повертає масив <= 20 об'єктів фільмів.
 // при невірному вводі, повертається пустий масив '[]'.
 
-class ApiService {
+// fetchMovieById  Приймає movieId (число) і повертає об'єкт
+export default class ApiService {
   constructor() {
     this.API_KEY = 'ddf4c37c511f1a6f73099f52175f3c51';
     this.searchQuery = '';
@@ -30,15 +30,27 @@ class ApiService {
   fetchMoviesByKeyWords(keyWords) {
     this.setSearchQuery(keyWords);
     return fetch(
-      `${this.URL}/search/movie?api_key=${this.API_KEY}&query=${this.searchQuery}&page=${this.queryPag}`,
+      `${this.URL}/search/movie?api_key=${this.API_KEY}&query=${this.searchQuery}&page=${this.queryPage}`,
       this.options,
     )
-      .then(r => r.json())
-      .then(({ results }) => results);
+      .then(r => this.checkResponse(r))
+      .then(({ results }) => results)
+      .catch(reason => console.log(reason));
   }
-
+  fetchMovieById(MovieId) {
+    return fetch(
+      `${this.URL}/movie/${MovieId}?api_key=${this.API_KEY}`,
+      this.options,
+    )
+      .then(r => this.checkResponse(r))
+      .then(result => result);
+  }
   fetchGenres() {
-    return fetch(`${this.URL}/genre/movie/list?api_key=${this.API_KEY}&language=en-US`).then(r => r.json()).then(({ genres }) => genres);
+    return fetch(
+      `${this.URL}/genre/movie/list?api_key=${this.API_KEY}&language=en-US`,
+    )
+      .then(r => this.checkResponse(r))
+      .then(({ genres }) => genres);
   }
   setSearchQuery(keyString) {
     this.searchQuery = keyString.toLowerCase().split(' ').join('+');
@@ -46,11 +58,10 @@ class ApiService {
   checkResponse(r) {
     if (r.status === 200) {
       return r.json();
-    } else {
-      console.error('error');
+    } else if (r.status === 404) {
+      alert('the resource could not be found');
+    } else if (r.status === 401) {
+      alert(`Access to your account has been suspended, contact administrator`);
     }
   }
 }
-
-
-export default ApiService;
