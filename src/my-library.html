@@ -1,57 +1,62 @@
 <!DOCTYPE html>
 <html lang="ru">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MY LIBRARY</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header class="header">
-        <div class="header-library-container">
-            <div class="logo-container">
-                <a class="header-link" href="./index.html">
-                    <img class="header-img" src="./img/film.png" alt="logo" width="22" height="22" />
-                    <h1 class="header-text">Filmoteka</h1>
-                </a>
-            </div>
-            <!-- кнопки предпочтений -->
-            <nav class="preference-buttons">
-                <button class="header-watched" type="button">Watched</button>
-
-                <button class="header-queue" type="button">queue</button>
-            </nav>
-
-            <!-- ////////////////////////////// -->
-            <nav class="nav-container">
-                <a href='./index.html' class="header-home">HOME</a>
-
-                <a href="./my-library.html" class="header-library current">
-                    MY LIBRARY
-                </a>
-            </nav>
+      <div class="header-library-container">
+        <div class="logo-container">
+          <a class="header-link" href="./index.html">
+            <img
+              class="header-img"
+              src="./img/film.png"
+              alt="logo"
+              width="22"
+              height="22"
+            />
+            <h1 class="header-text">Filmoteka</h1>
+          </a>
         </div>
+        <!-- кнопки предпочтений -->
+        <nav class="preference-buttons">
+          <button class="header-watched" type="button">Watched</button>
+
+          <button class="header-queue" type="button">queue</button>
+        </nav>
+
+        <!-- ////////////////////////////// -->
+        <nav class="nav-container">
+          <a href="./index.html" class="header-home">HOME</a>
+
+          <a href="./my-library.html" class="header-library current">
+            MY LIBRARY
+          </a>
+        </nav>
+      </div>
     </header>
     <main class="main">
-        <section>
-            <div class="main-container">
-                <ul class="home-list">
-
-                </ul>
-            </div>
-        </section>
+      <section>
+        <div class="main-container">
+          <ul class="home-list"></ul>
+        </div>
+      </section>
     </main>
     <footer>
-        <div class="footer-container">
-            <p class="footer-text">© 2020 | All Rights Reserved | Developed with</p>
-            <img class="footer-img" src="./img/heart.png" alt="сердце" />
-            <p class="footer-text">
-                by <a class="footer-link" href="#">GoIT Students</a>
-            </p>
+      <div class="footer-container">
+        <p class="footer-text-first-part">© 2020 | All Rights Reserved |</p>
+        <div class="footer-copyrights">
+          <p class="footer-text-second-part">Developed with</p>
+          <img class="footer-img" src="./img/heart.png" alt="сердце" />
+          <p class="footer-text">
+            by <a class="footer-link" href="#">GoIT Students</a>
+          </p>
         </div>
+      </div>
     </footer>
     <script src="./my-library.js"></script>
-</body>
-
+  </body>
 </html>

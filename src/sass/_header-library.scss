@@ -1,4 +1,5 @@
 .header-library-container {
+  position: relative;
   display: flex;
   // min-width: 100%;
   padding: 0 71px;
@@ -10,11 +11,29 @@
   justify-content: space-between;
   // align-items: center;
   align-items: end;
-  background-image: url(../img/my-library-img.jpg);
+  @media screen and (max-width: 767px) {
+    background-image: url('../img/my-library_320.jpg');
+    max-width: 320px;
+    padding: 0 21px;
+  }
+
+  @media screen and (min-width: 768px) {
+    background-image: url('../img/my-library_768.jpg');
+    max-width: 768px;
+    padding: 0 71px;
+  }
+  @media screen and (min-width: 1024px) {
+    background-image: url(../img/my-library.jpg);
+    max-width: 1024px;
+    padding: 0 71px;
+  }
 }
 
 .preference-buttons {
   margin-top: 121px;
+  @media screen and (max-width: 767px) {
+    display: flex;
+  }
 }
 
 .header-watched {
@@ -35,6 +54,12 @@
   align-items: center;
   text-align: center;
   text-transform: uppercase;
+  @media screen and (max-width: 767px) {
+    width: 129.53px;
+    position: absolute;
+    left: 168px;
+    top: 121px;
+  }
 }
 
 .header-watched:hover,
@@ -89,6 +114,12 @@
   align-items: center;
   text-align: center;
   text-transform: uppercase;
+  @media screen and (max-width: 767px) {
+    width: 129.53px;
+    position: absolute;
+    top: 121px;
+    right: 168px;
+  }
 }
 
 .home-card-rating {
@@ -109,7 +140,6 @@
   text-transform: uppercase;
 }
 
-
 .card-list {
-    display: flex;
+  display: flex;
 }
