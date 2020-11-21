@@ -15,10 +15,10 @@ const modalWindow = document.querySelector('[data-modal]');
 // data-action="add-to-queue" на одноименную кнопку фильма.
 // на эти же кнопки необходимо записывать в data-id - id открытого фильма
 
-const refs = {
-  btnAddToWatched: document.querySelector('[data-action="add-to-watched"]'),
-  btnAddToQueue: document.querySelector('[data-action="add-to-queue"]'),
-};
+// const refs = {
+//   btnAddToWatched: document.querySelector('[data-action="add-to-watched"]'),
+//   btnAddToQueue: document.querySelector('[data-action="add-to-queue"]'),
+// };
 
 let watchedArray = localStorage.getItem('WATCHED_KEY')
   ? JSON.parse(localStorage.getItem('WATCHED_KEY'))
@@ -134,9 +134,21 @@ function onKeysPress(evt) {
     }
 }
 
-function renderMovieInfo(movieID) {
-    apiService.fetchMovieById(movieID).then((result) => {
-        modalWindow.innerHTML = movieInfo(result);
-        console.log(result);
-    })
+async function renderMovieInfo(movieID) {
+    // apiService.fetchMovieById(movieID).then((result) => {
+    //     modalWindow.innerHTML = movieInfo(result);
+    //     console.log(result);
+    // })
+
+    const response = await apiService.fetchMovieById(movieID);
+    modalWindow.innerHTML = movieInfo(response);
+
+    const refs = {
+  btnAddToWatched: document.querySelector('[data-action="add-to-watched"]'),
+  btnAddToQueue: document.querySelector('[data-action="add-to-queue"]'),
+    };
+    
+
+    refs.btnAddToWatched.addEventListener('click', addToWatched);
+    refs.btnAddToQueue.addEventListener('click', addToQueue);
 }
