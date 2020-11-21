@@ -4,10 +4,11 @@
   "description": "Team project",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel src/*.html",
+    "dev": "npm run cleanup && parcel src/*.html",
     "build": "parcel build src/*.html",
     "predeploy": "npm run build -- --public-url /goit-group_14-filmoteka/",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist", 
+    "cleanup": "rm -rf .cache dist"
   },
   "repository": {
     "type": "git",

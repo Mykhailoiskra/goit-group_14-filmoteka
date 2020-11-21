@@ -14,6 +14,21 @@ $tablet: 768px;
 $desktop: 1024px;
 
 // Утилиты
+html {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $mainFont;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
 
 .visually-hidden {
   position: absolute;
