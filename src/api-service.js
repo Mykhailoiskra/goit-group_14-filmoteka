@@ -36,6 +36,10 @@ class ApiService {
       .then(r => r.json())
       .then(({ results }) => results);
   }
+
+  fetchGenres() {
+    return fetch(`${this.URL}/genre/movie/list?api_key=${this.API_KEY}&language=en-US`).then(r => r.json()).then(({ genres }) => genres);
+  }
   setSearchQuery(keyString) {
     this.searchQuery = keyString.toLowerCase().split(' ').join('+');
   }
