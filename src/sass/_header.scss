@@ -134,6 +134,8 @@ body {
   font-size: 12px;
   line-height: 1.16;
   padding: 3px 0;
+  white-space: nowrap;
+  text-transform: uppercase;
   // margin-bottom: 158px;
   border: 0;
   background-color: rgba(0, 0, 0, 0);
@@ -168,6 +170,7 @@ body {
   padding: 3px 0;
   // margin-bottom: 158px;
   margin-right: 39px;
+  text-transform: uppercase;
   border: 0;
   background-color: rgba(0, 0, 0, 0);
   &.current::after {
