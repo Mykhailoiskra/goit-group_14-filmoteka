@@ -3,13 +3,16 @@ import './api-service.js';
 import ApiService from './api-service.js';
 import movieCards from './templates/movie-card.hbs';
 import movieInfo from './templates/movie-info.hbs';
+// Добавляет спиннер
+import onLoadSpinner from './spinner';
+
+onLoadSpinner();
 
 const apiService = new ApiService();
 const debounce = require('lodash.debounce');
 const moviesList = document.querySelector('.home-list');
 const queryInputRef = document.getElementById('query-input');
 const modalWindow = document.querySelector('[data-modal]');
-
 
 // Необходимо повесить дата атрибут data-action="add-to-watched" на одноименную кнопку фильма,
 // data-action="add-to-queue" на одноименную кнопку фильма.
@@ -25,9 +28,9 @@ let watchedArray = localStorage.getItem('WATCHED_KEY')
   : [];
 let queueArray = localStorage.getItem('QUEUE_KEY')
   ? JSON.parse(localStorage.getItem('QUEUE_KEY'))
-    : [];
-  
-    // слушатели добавлять при открытии большой карточки фильма и снимать при закрытии
+  : [];
+
+// слушатели добавлять при открытии большой карточки фильма и снимать при закрытии
 // при нажимании на любую из этих кнопок она далжна становиться неактивной
 // refs.btnAddToWatched.addEventListener('click', addToWatched);
 // refs.btnAddToQueue.addEventListener('click', addToQueue);
@@ -35,8 +38,6 @@ let queueArray = localStorage.getItem('QUEUE_KEY')
 window.addEventListener('load', onLoad());
 queryInputRef.addEventListener('input', debounce(onQueryInput, 1000));
 moviesList.addEventListener('click', onMovieClick);
-
-
 
 function onLoad() {
   // apiService.fetchPopMovies().then((results) => makeMovieCardsMarkup(results));
@@ -63,17 +64,17 @@ function onQueryInput(e) {
 }
 
 function onMovieClick(event) {
-     if (event.target.nodeName !== 'IMG') {
-        return
-    }
-    openModalWindow();
-    renderMovieInfo(event.target.dataset.id);
-    window.scrollTo({
-  top: 230,
-  left: 0,
-  behavior: 'smooth'
-});
-    
+  if (event.target.nodeName !== 'IMG') {
+    return;
+  }
+
+  openModalWindow();
+  renderMovieInfo(event.target.dataset.id);
+  window.scrollTo({
+    top: 230,
+    left: 0,
+    behavior: 'smooth',
+  });
 }
 
 function makeMovieCardsMarkup(results) {
@@ -107,36 +108,35 @@ function addToQueue(e) {
   const filmName = e.currentTarget.dataset.id;
   queueArray = [queueArray];
   queueArray.push(`${filmName}`);
-  localStorage.setItem('QUEUE_KEY', JSON.stringify(`${queueArray}`));}
+  localStorage.setItem('QUEUE_KEY', JSON.stringify(`${queueArray}`));
+}
 
 function openModalWindow() {
-    modalWindow.classList.remove("visually-hidden");
-    modalWindow.addEventListener('click', onOverlayClick);
-    window.addEventListener("keydown", onKeysPress);
-
-
+  modalWindow.classList.remove('visually-hidden');
+  modalWindow.addEventListener('click', onOverlayClick);
+  window.addEventListener('keydown', onKeysPress);
 }
 function closeModalWindow() {
-    modalWindow.classList.add("visually-hidden");
-    modalWindow.removeEventListener('click', onOverlayClick);
-    window.removeEventListener("keydown", onKeysPress);
-    modalWindow.innerHTML = '';
+  modalWindow.classList.add('visually-hidden');
+  modalWindow.removeEventListener('click', onOverlayClick);
+  window.removeEventListener('keydown', onKeysPress);
+  modalWindow.innerHTML = '';
 }
 function onOverlayClick(evt) {
   if (evt.target === evt.currentTarget) {
     closeModalWindow();
-    }
+  }
 }
 
 function onKeysPress(evt) {
-    if (evt.code === "Escape") {
-        closeModalWindow();
-    }
+  if (evt.code === 'Escape') {
+    closeModalWindow();
+  }
 }
 
 function renderMovieInfo(movieID) {
-    apiService.fetchMovieById(movieID).then((result) => {
-        modalWindow.innerHTML = movieInfo(result);
-        console.log(result);
-    })
+  apiService.fetchMovieById(movieID).then(result => {
+    modalWindow.innerHTML = movieInfo(result);
+    console.log(result);
+  });
 }
