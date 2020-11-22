@@ -1,0 +1,168 @@
+.backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+
+  background-color: #ffffff;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  @media screen and (min-width: $tablet) {
+    padding-left: 70px;
+    padding-right: 70px;
+  }
+}
+
+.card-details-markup {
+  font-family: Roboto;
+  color: $mainColor;
+  font-style: normal;
+  text-align: left;
+  font-weight: 500;
+
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    margin: -15px;
+    padding-top: 60px;
+
+    & .card-details-img,
+    & .card-details-info {
+      width: calc((100% - 60px) / 2);
+      margin: 15px;
+      height: auto;
+    }
+  }
+}
+
+.card-details-img {
+  width: 280px;
+  height: 416px;
+  border-radius: 5px;
+  box-shadow: 0 0 3px;
+}
+
+.card-image {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.card-details-info {
+  margin-top: 30px;
+}
+
+.card-details-title {
+  font-size: 20px;
+  line-height: 23px;
+  text-transform: uppercase;
+  margin: 0;
+
+  @media screen and (min-width: $tablet) {
+    font-size: 30px;
+    line-height: 35px;
+  }
+}
+
+.card-details-list {
+  margin-bottom: 10px;
+  font-size: 12px;
+  padding-inline-start: 0;
+}
+
+.card-details-item {
+  display: flex;
+  justify-content: space-between;
+  @media screen and (min-width: $tablet) {
+    justify-content: start;
+  }
+}
+.card-details-item-about {
+  line-height: 16px;
+  color: #8c8c8c;
+  width: 70px;
+  margin-bottom: 0px;
+}
+
+.card-details-item-descript {
+  line-height: 14px;
+  text-transform: uppercase;
+  width: 155px;
+  margin-bottom: 0px;
+  @media screen and (min-width: $tablet) {
+    margin-left: 80px;
+  }
+}
+
+.card-details-item-vote {
+  display: inline-block;
+  color: $headerMainColor;
+  width: 36px;
+  height: 16px;
+  background: $accentColor;
+  border-radius: 5px;
+  text-align: center;
+  padding-top: 1px;
+}
+
+.card-details-item-genre {
+  line-height: 16px;
+  text-transform: none;
+}
+
+.card-details-descript-title {
+  font-size: 12px;
+  line-height: 16px;
+  text-transform: uppercase;
+  margin-block-start: 20px;
+  margin-block-end: 10px;
+}
+
+.card-details-descript-about {
+  font-size: 12px;
+  line-height: 20px;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.card-details-button-markup {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 40px;
+  @media screen and (min-width: $tablet) {
+    justify-content: start;
+  }
+}
+
+.modal-btn {
+  padding: 10px 5px;
+  width: 120px;
+  cursor: pointer;
+
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  box-shadow: 0 0 1px;
+  transition: all 300ms ease-in;
+
+  border: 1px solid $headerMainColor;
+  color: $mainColor;
+  background-color: transparent;
+  text-transform: uppercase;
+  border-radius: 5px;
+  outline: none;
+
+  &:hover,
+  &:focus {
+    color: $headerMainColor;
+    background-color: $accentColor;
+    border: 1px solid $accentColor;
+  }
+}
+
+.modal-btn:first-child {
+  margin-right: 15px;
+}
