@@ -223,7 +223,21 @@ async function renderMovieInfo(movieID) {
     refs.btnAddToWatched.addEventListener('click', addToWatched);
     refs.btnAddToQueue.addEventListener('click', addToQueue);
 }
+function addToWatched(e) {
+  const filmName = e.currentTarget.dataset.id;
+  const index = watchedArray.indexOf(filmName);
 
+  if (index === -1){
+    watchedArray.push(filmName);  
+      //повесить добавлено
+  }
+  else{
+    watchedArray.splice(index, 1);
+    // повесить убрано
+  }
+
+  localStorage.setItem('WATCHED_KEY', JSON.stringify(watchedArray));
+}
 
 
 const btnUp = document.querySelector('.btnUp');
