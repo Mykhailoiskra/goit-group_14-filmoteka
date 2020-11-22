@@ -117,7 +117,20 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+})({"../node_modules/core-js/library/modules/_core.js":[function(require,module,exports) {
+var core = module.exports = { version: '2.6.11' };
+if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
+
+},{}],"../node_modules/core-js/library/fn/json/stringify.js":[function(require,module,exports) {
+var core = require('../../modules/_core');
+var $JSON = core.JSON || (core.JSON = { stringify: JSON.stringify });
+module.exports = function stringify(it) { // eslint-disable-line no-unused-vars
+  return $JSON.stringify.apply($JSON, arguments);
+};
+
+},{"../../modules/_core":"../node_modules/core-js/library/modules/_core.js"}],"../node_modules/@babel/runtime-corejs2/core-js/json/stringify.js":[function(require,module,exports) {
+module.exports = require("core-js/library/fn/json/stringify");
+},{"core-js/library/fn/json/stringify":"../node_modules/core-js/library/fn/json/stringify.js"}],"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
 function getBundleURLCached() {
@@ -189,7 +202,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./..\\img\\Overlay_320.jpg":[["Overlay_320.22aa2b85.jpg","img/Overlay_320.jpg"],"img/Overlay_320.jpg"],"./..\\img\\onerlay_768.jpg":[["onerlay_768.10b8ab49.jpg","img/onerlay_768.jpg"],"img/onerlay_768.jpg"],"./..\\img\\overlay.jpg":[["overlay.e35c6e3f.jpg","img/overlay.jpg"],"img/overlay.jpg"],"./..\\img\\search.png":[["search.42b7d05d.png","img/search.png"],"img/search.png"],"./..\\img\\my-library_320.jpg":[["my-library_320.5195f01b.jpg","img/my-library_320.jpg"],"img/my-library_320.jpg"],"./..\\img\\my-library_768.jpg":[["my-library_768.c92362a8.jpg","img/my-library_768.jpg"],"img/my-library_768.jpg"],"./..\\img\\my-library.jpg":[["my-library.550d45c4.jpg","img/my-library.jpg"],"img/my-library.jpg"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"api-service.js":[function(require,module,exports) {
+},{"./../img/Overlay_320.jpg":[["Overlay_320.22aa2b85.jpg","img/Overlay_320.jpg"],"img/Overlay_320.jpg"],"./../img/onerlay_768.jpg":[["onerlay_768.10b8ab49.jpg","img/onerlay_768.jpg"],"img/onerlay_768.jpg"],"./../img/overlay.jpg":[["overlay.e35c6e3f.jpg","img/overlay.jpg"],"img/overlay.jpg"],"./../img/search.png":[["search.42b7d05d.png","img/search.png"],"img/search.png"],"./../img/my-library_320.jpg":[["my-library_320.5195f01b.jpg","img/my-library_320.jpg"],"img/my-library_320.jpg"],"./../img/my-library_768.jpg":[["my-library_768.c92362a8.jpg","img/my-library_768.jpg"],"img/my-library_768.jpg"],"./../img/my-library.jpg":[["my-library.550d45c4.jpg","img/my-library.jpg"],"img/my-library.jpg"],"./../img/arrow1.png":[["arrow1.1b1aebe0.png","img/arrow1.png"],"img/arrow1.png"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"api-service.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2271,7 +2284,7 @@ THE SOFTWARE.
 });
 
 ;
-},{}],"templates/movie-card.hbs":[function(require,module,exports) {
+},{}],"templates/movie-library.hbs":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2285,7 +2298,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 const templateFunction = _handlebars.default.template({
   "1": function (container, depth0, helpers, partials, data) {
-    var helper,
+    var stack1,
+        helper,
         alias1 = depth0 != null ? depth0 : container.nullContext || {},
         alias2 = container.hooks.helperMissing,
         alias3 = "function",
@@ -2298,7 +2312,7 @@ const templateFunction = _handlebars.default.template({
       return undefined;
     };
 
-    return "<li class=\"home-list-card\">\r\n    <img class=\"home-list-img\" src=\"https://image.tmdb.org/t/p/w342" + alias4((helper = (helper = lookupProperty(helpers, "poster_path") || (depth0 != null ? lookupProperty(depth0, "poster_path") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+    return "<li class=\"home-list-card\">\n    <img class=\"home-list-img\" src=\"https://image.tmdb.org/t/p/w342" + alias4((helper = (helper = lookupProperty(helpers, "poster_path") || (depth0 != null ? lookupProperty(depth0, "poster_path") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
       "name": "poster_path",
       "hash": {},
       "data": data,
@@ -2312,7 +2326,7 @@ const templateFunction = _handlebars.default.template({
           "column": 82
         }
       }
-    }) : helper)) + "\" alt=\"movie picture\"\r\n        data-id=\"" + alias4((helper = (helper = lookupProperty(helpers, "id") || (depth0 != null ? lookupProperty(depth0, "id") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+    }) : helper)) + "\" alt=\"movie picture\"\n        data-id=\"" + alias4((helper = (helper = lookupProperty(helpers, "id") || (depth0 != null ? lookupProperty(depth0, "id") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
       "name": "id",
       "hash": {},
       "data": data,
@@ -2326,7 +2340,7 @@ const templateFunction = _handlebars.default.template({
           "column": 23
         }
       }
-    }) : helper)) + "\" />\r\n    <p class=\"home-card-title\">" + alias4((helper = (helper = lookupProperty(helpers, "original_title") || (depth0 != null ? lookupProperty(depth0, "original_title") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+    }) : helper)) + "\" />\n    <p class=\"home-card-title\">" + alias4((helper = (helper = lookupProperty(helpers, "original_title") || (depth0 != null ? lookupProperty(depth0, "original_title") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
       "name": "original_title",
       "hash": {},
       "data": data,
@@ -2340,49 +2354,62 @@ const templateFunction = _handlebars.default.template({
           "column": 49
         }
       }
-    }) : helper)) + "</p>\r\n    <div class=\"card-list\">\r\n        <p class=\"home-card-сategory\">" + alias4((helper = (helper = lookupProperty(helpers, "genre_names") || (depth0 != null ? lookupProperty(depth0, "genre_names") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
-      "name": "genre_names",
+    }) : helper)) + "</p>\n    <div class=\"card-list\">\n        <p class=\"home-card-сategory\">\n" + ((stack1 = lookupProperty(helpers, "each").call(alias1, depth0 != null ? lookupProperty(depth0, "genres") : depth0, {
+      "name": "each",
       "hash": {},
+      "fn": container.program(2, data, 0),
+      "inverse": container.noop,
       "data": data,
       "loc": {
         "start": {
-          "line": 7,
-          "column": 38
+          "line": 8,
+          "column": 12
         },
         "end": {
-          "line": 7,
-          "column": 53
+          "line": 10,
+          "column": 21
         }
       }
-    }) : helper)) + " | " + alias4((helper = (helper = lookupProperty(helpers, "release_date") || (depth0 != null ? lookupProperty(depth0, "release_date") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+    })) != null ? stack1 : "") + "\n            | " + alias4((helper = (helper = lookupProperty(helpers, "release_date") || (depth0 != null ? lookupProperty(depth0, "release_date") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
       "name": "release_date",
       "hash": {},
       "data": data,
       "loc": {
         "start": {
-          "line": 7,
-          "column": 56
+          "line": 12,
+          "column": 14
         },
         "end": {
-          "line": 7,
-          "column": 72
+          "line": 12,
+          "column": 30
         }
       }
-    }) : helper)) + "</p>\r\n        <p class=\"home-card-rating\">" + alias4((helper = (helper = lookupProperty(helpers, "vote_average") || (depth0 != null ? lookupProperty(depth0, "vote_average") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+    }) : helper)) + "</p>\n        <p class=\"home-card-rating\">" + alias4((helper = (helper = lookupProperty(helpers, "vote_average") || (depth0 != null ? lookupProperty(depth0, "vote_average") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
       "name": "vote_average",
       "hash": {},
       "data": data,
       "loc": {
         "start": {
-          "line": 8,
+          "line": 13,
           "column": 36
         },
         "end": {
-          "line": 8,
+          "line": 13,
           "column": 52
         }
       }
-    }) : helper)) + "</p>\r\n    </div>\r\n</li>\r\n";
+    }) : helper)) + "</p>\n    </div>\n</li>\n";
+  },
+  "2": function (container, depth0, helpers, partials, data) {
+    var lookupProperty = container.lookupProperty || function (parent, propertyName) {
+      if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
+        return parent[propertyName];
+      }
+
+      return undefined;
+    };
+
+    return "            " + container.escapeExpression(container.lambda(depth0 != null ? lookupProperty(depth0, "name") : depth0, depth0)) + "\n";
   },
   "compiler": [8, ">= 4.3.0"],
   "main": function (container, depth0, helpers, partials, data) {
@@ -2407,7 +2434,7 @@ const templateFunction = _handlebars.default.template({
           "column": 0
         },
         "end": {
-          "line": 11,
+          "line": 16,
           "column": 9
         }
       }
@@ -2418,41 +2445,378 @@ const templateFunction = _handlebars.default.template({
 
 var _default = templateFunction;
 exports.default = _default;
+},{"handlebars/dist/handlebars.runtime":"../node_modules/handlebars/dist/handlebars.runtime.js"}],"templates/movie-info.hbs":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _handlebars = _interopRequireDefault(require("handlebars/dist/handlebars.runtime"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+const templateFunction = _handlebars.default.template({
+  "1": function (container, depth0, helpers, partials, data) {
+    var helper,
+        lookupProperty = container.lookupProperty || function (parent, propertyName) {
+      if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
+        return parent[propertyName];
+      }
+
+      return undefined;
+    };
+
+    return "                    <span class=\"card-details-item-genre\">" + container.escapeExpression((helper = (helper = lookupProperty(helpers, "name") || (depth0 != null ? lookupProperty(depth0, "name") : depth0)) != null ? helper : container.hooks.helperMissing, typeof helper === "function" ? helper.call(depth0 != null ? depth0 : container.nullContext || {}, {
+      "name": "name",
+      "hash": {},
+      "data": data,
+      "loc": {
+        "start": {
+          "line": 29,
+          "column": 58
+        },
+        "end": {
+          "line": 29,
+          "column": 66
+        }
+      }
+    }) : helper)) + ", </span>\n";
+  },
+  "compiler": [8, ">= 4.3.0"],
+  "main": function (container, depth0, helpers, partials, data) {
+    var stack1,
+        helper,
+        alias1 = depth0 != null ? depth0 : container.nullContext || {},
+        alias2 = container.hooks.helperMissing,
+        alias3 = "function",
+        alias4 = container.escapeExpression,
+        lookupProperty = container.lookupProperty || function (parent, propertyName) {
+      if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
+        return parent[propertyName];
+      }
+
+      return undefined;
+    };
+
+    return "<div class=\"card-details-markup\">\n    <div class=\"card-details-img\">\n        <img src=\"https://image.tmdb.org/t/p/w400" + alias4((helper = (helper = lookupProperty(helpers, "poster_path") || (depth0 != null ? lookupProperty(depth0, "poster_path") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+      "name": "poster_path",
+      "hash": {},
+      "data": data,
+      "loc": {
+        "start": {
+          "line": 3,
+          "column": 49
+        },
+        "end": {
+          "line": 3,
+          "column": 64
+        }
+      }
+    }) : helper)) + "\" alt=\"" + alias4((helper = (helper = lookupProperty(helpers, "title") || (depth0 != null ? lookupProperty(depth0, "title") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+      "name": "title",
+      "hash": {},
+      "data": data,
+      "loc": {
+        "start": {
+          "line": 3,
+          "column": 71
+        },
+        "end": {
+          "line": 3,
+          "column": 80
+        }
+      }
+    }) : helper)) + "\" class=\"card-image\" />\n    </div>\n    <div class=\"card-details-info\">\n        <h2 class=\"card-details-title\">" + alias4((helper = (helper = lookupProperty(helpers, "title") || (depth0 != null ? lookupProperty(depth0, "title") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+      "name": "title",
+      "hash": {},
+      "data": data,
+      "loc": {
+        "start": {
+          "line": 6,
+          "column": 39
+        },
+        "end": {
+          "line": 6,
+          "column": 48
+        }
+      }
+    }) : helper)) + "</h2>\n        <ul class=\"card-details-list\">\n            <li class=\"card-details-item\">\n                <p class=\"card-details-item-about\">Vote / Votes</p>\n                <p class=\"card-details-item-descript\">\n                    <span class=\"card-details-item-vote\">" + alias4((helper = (helper = lookupProperty(helpers, "vote_average") || (depth0 != null ? lookupProperty(depth0, "vote_average") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+      "name": "vote_average",
+      "hash": {},
+      "data": data,
+      "loc": {
+        "start": {
+          "line": 11,
+          "column": 57
+        },
+        "end": {
+          "line": 11,
+          "column": 73
+        }
+      }
+    }) : helper)) + "</span>\n                    <span>/</span>\n                    <span class=\"card-details-item-votes\">" + alias4((helper = (helper = lookupProperty(helpers, "vote_count") || (depth0 != null ? lookupProperty(depth0, "vote_count") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+      "name": "vote_count",
+      "hash": {},
+      "data": data,
+      "loc": {
+        "start": {
+          "line": 13,
+          "column": 58
+        },
+        "end": {
+          "line": 13,
+          "column": 72
+        }
+      }
+    }) : helper)) + "</span>\n                </p>\n            </li>\n            <li class=\"card-details-item\">\n                <p class=\"card-details-item-about\">Popularity</p>\n                <p class=\"card-details-item-descript\">" + alias4((helper = (helper = lookupProperty(helpers, "popularity") || (depth0 != null ? lookupProperty(depth0, "popularity") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+      "name": "popularity",
+      "hash": {},
+      "data": data,
+      "loc": {
+        "start": {
+          "line": 18,
+          "column": 54
+        },
+        "end": {
+          "line": 18,
+          "column": 68
+        }
+      }
+    }) : helper)) + "</p>\n            </li>\n            <li class=\"card-details-item\">\n                <p class=\"card-details-item-about\">Original Title</p>\n\n                <p class=\"card-details-item-descript\">" + alias4((helper = (helper = lookupProperty(helpers, "original_title") || (depth0 != null ? lookupProperty(depth0, "original_title") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+      "name": "original_title",
+      "hash": {},
+      "data": data,
+      "loc": {
+        "start": {
+          "line": 23,
+          "column": 54
+        },
+        "end": {
+          "line": 23,
+          "column": 72
+        }
+      }
+    }) : helper)) + "</p>\n            </li>\n            <li class=\"card-details-item\">\n                <p class=\"card-details-item-about\">Genre</p>\n                <p class=\"card-details-item-descript\">\n" + ((stack1 = lookupProperty(helpers, "each").call(alias1, depth0 != null ? lookupProperty(depth0, "genres") : depth0, {
+      "name": "each",
+      "hash": {},
+      "fn": container.program(1, data, 0),
+      "inverse": container.noop,
+      "data": data,
+      "loc": {
+        "start": {
+          "line": 28,
+          "column": 20
+        },
+        "end": {
+          "line": 30,
+          "column": 29
+        }
+      }
+    })) != null ? stack1 : "") + "                </p>\n            </li>\n        </ul>\n        <p class=\"card-details-descript-title\">About</p>\n        <p class=\"card-details-descript-about\">" + alias4((helper = (helper = lookupProperty(helpers, "overview") || (depth0 != null ? lookupProperty(depth0, "overview") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+      "name": "overview",
+      "hash": {},
+      "data": data,
+      "loc": {
+        "start": {
+          "line": 35,
+          "column": 47
+        },
+        "end": {
+          "line": 35,
+          "column": 59
+        }
+      }
+    }) : helper)) + "</p>\n        <div class=\"card-details-button-markup\">\n            <button class=\"modal-btn\" data-action=\"add-to-watched\" type=\"button\" data-id=\"" + alias4((helper = (helper = lookupProperty(helpers, "id") || (depth0 != null ? lookupProperty(depth0, "id") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+      "name": "id",
+      "hash": {},
+      "data": data,
+      "loc": {
+        "start": {
+          "line": 37,
+          "column": 90
+        },
+        "end": {
+          "line": 37,
+          "column": 96
+        }
+      }
+    }) : helper)) + "\">add to\n                watched</button>\n            <button class=\"modal-btn\" data-action=\"add-to-queue\" type=\"button\" data-id=\"" + alias4((helper = (helper = lookupProperty(helpers, "id") || (depth0 != null ? lookupProperty(depth0, "id") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+      "name": "id",
+      "hash": {},
+      "data": data,
+      "loc": {
+        "start": {
+          "line": 39,
+          "column": 88
+        },
+        "end": {
+          "line": 39,
+          "column": 94
+        }
+      }
+    }) : helper)) + "\">add to queue</button>\n        </div>\n    </div>\n</div>";
+  },
+  "useData": true
+});
+
+var _default = templateFunction;
+exports.default = _default;
 },{"handlebars/dist/handlebars.runtime":"../node_modules/handlebars/dist/handlebars.runtime.js"}],"my-library.js":[function(require,module,exports) {
 "use strict";
+
+var _stringify = _interopRequireDefault(require("@babel/runtime-corejs2/core-js/json/stringify"));
 
 require("./sass/main.scss");
 
 var _apiService = _interopRequireDefault(require("./api-service.js"));
 
-var _movieCard = _interopRequireDefault(require("./templates/movie-card.hbs"));
+var _movieLibrary = _interopRequireDefault(require("./templates/movie-library.hbs"));
+
+var _movieInfo = _interopRequireDefault(require("./templates/movie-info.hbs"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-const apiService = new _apiService.default();
+const apiService = new _apiService.default(); // const modalWindow = document.querySelector('[data-modal]');
+// const paginationContainer = document.getElementsByClassName(
+//   'pagination-buttons',
+// )[0];
+// import movieCards from './templates/movie-card.hbs';
+
 const modalWindow = document.querySelector('[data-modal]');
-const paginationContainer = document.getElementsByClassName('pagination-buttons')[0];
 const refs = {
   btnWatched: document.querySelector('[data-action="watched"]'),
   btnQueue: document.querySelector('[data-action="queue"]'),
   moviesList: document.querySelector('.home-list')
 };
-refs.btnWatched.addEventListener('click', showWatched); // refs.btnQueue.addEventListener('click', showQueue);
+window.addEventListener('load', onLoad());
+refs.btnWatched.addEventListener('click', showWatched);
+refs.btnQueue.addEventListener('click', showQueue);
+refs.moviesList.addEventListener('click', onMovieClick);
+let watchedArray = localStorage.getItem('WATCHED_KEY') ? JSON.parse(localStorage.getItem('WATCHED_KEY')) : [];
+let queueArray = localStorage.getItem('QUEUE_KEY') ? JSON.parse(localStorage.getItem('QUEUE_KEY')) : [];
+
+function onLoad() {
+  showWatched();
+}
 
 function makeMovieCardsMarkup(results) {
-  const markup = (0, _movieCard.default)(results);
-  moviesList.innerHTML = markup;
+  const markup = (0, _movieLibrary.default)(results);
+  refs.moviesList.innerHTML = markup;
 }
 
-function showWatched() {
+function clearMarkup() {
+  refs.moviesList.innerHTML = '';
+}
+
+async function showWatched() {
   let watchedArray = localStorage.getItem('WATCHED_KEY') ? JSON.parse(localStorage.getItem('WATCHED_KEY')) : [];
-  console.log(watchedArray);
+  clearMarkup();
+  let watchedMovies = [];
 
   for (let i = 0; i < watchedArray.length; i += 1) {
-    console.log(apiService.fetchMovieById(Number(watchedArray[i])));
+    await apiService.fetchMovieById(Number(watchedArray[i])).then(result => watchedMovies.push(result));
+  }
+
+  console.log(watchedMovies);
+  makeMovieCardsMarkup(watchedMovies);
+}
+
+async function showQueue() {
+  let queueArray = localStorage.getItem('QUEUE_KEY') ? JSON.parse(localStorage.getItem('QUEUE_KEY')) : [];
+  clearMarkup();
+  let queueMovies = [];
+
+  for (let i = 0; i < queueArray.length; i += 1) {
+    await apiService.fetchMovieById(Number(queueArray[i])).then(result => queueMovies.push(result));
+  }
+
+  makeMovieCardsMarkup(queueMovies);
+}
+
+function onMovieClick(event) {
+  if (event.target.nodeName !== 'IMG') {
+    return;
+  }
+
+  openModalWindow();
+  renderMovieInfo(event.target.dataset.id);
+  window.scrollTo({
+    top: 230,
+    left: 0,
+    behavior: 'smooth'
+  });
+}
+
+function openModalWindow() {
+  modalWindow.classList.remove("visually-hidden");
+  modalWindow.addEventListener('click', onOverlayClick);
+  window.addEventListener("keydown", onKeysPress);
+}
+
+function closeModalWindow() {
+  modalWindow.classList.add("visually-hidden");
+  modalWindow.removeEventListener('click', onOverlayClick);
+  window.removeEventListener("keydown", onKeysPress);
+  modalWindow.innerHTML = '';
+  refs.btnAddToWatched.removeEventListener('click', addToWatched);
+  refs.btnAddToQueue.removeEventListener('click', addToQueue);
+}
+
+function onOverlayClick(evt) {
+  if (evt.target === evt.currentTarget) {
+    closeModalWindow();
   }
 }
-},{"./sass/main.scss":"sass/main.scss","./api-service.js":"api-service.js","./templates/movie-card.hbs":"templates/movie-card.hbs"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+
+function onKeysPress(evt) {
+  if (evt.code === "Escape") {
+    closeModalWindow();
+  }
+}
+
+async function renderMovieInfo(movieID) {
+  // apiService.fetchMovieById(movieID).then((result) => {
+  //     modalWindow.innerHTML = movieInfo(result);
+  //     console.log(result);
+  // })
+  const response = await apiService.fetchMovieById(movieID);
+  modalWindow.innerHTML = (0, _movieInfo.default)(response);
+  const refs = {
+    btnAddToWatched: document.querySelector('[data-action="add-to-watched"]'),
+    btnAddToQueue: document.querySelector('[data-action="add-to-queue"]')
+  };
+  refs.btnAddToWatched.addEventListener('click', addToWatched);
+  refs.btnAddToQueue.addEventListener('click', addToQueue);
+}
+
+function addToWatched(e) {
+  const filmName = e.currentTarget.dataset.id;
+  const index = watchedArray.indexOf(filmName);
+
+  if (index === -1) {
+    watchedArray.push(filmName); //повесить добавлено
+  } else {
+    watchedArray.splice(index, 1); // повесить убрано
+  }
+
+  localStorage.setItem('WATCHED_KEY', (0, _stringify.default)(watchedArray));
+}
+
+function addToQueue(e) {
+  const filmName = e.currentTarget.dataset.id;
+  const index = queueArray.indexOf(filmName);
+
+  if (index === -1) {
+    queueArray.push(filmName); //повесить добавлено
+  } else {
+    queueArray.splice(index, 1); // повесить убрано
+  }
+
+  localStorage.setItem('QUEUE_KEY', (0, _stringify.default)(queueArray));
+}
+},{"@babel/runtime-corejs2/core-js/json/stringify":"../node_modules/@babel/runtime-corejs2/core-js/json/stringify.js","./sass/main.scss":"sass/main.scss","./api-service.js":"api-service.js","./templates/movie-library.hbs":"templates/movie-library.hbs","./templates/movie-info.hbs":"templates/movie-info.hbs"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -2480,7 +2844,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50036" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60743" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
