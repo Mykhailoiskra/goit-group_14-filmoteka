@@ -4,6 +4,8 @@ import ApiService from './api-service.js';
 import movieCards from './templates/movie-card.hbs';
 import movieInfo from './templates/movie-info.hbs';
 
+import upButtonHandler from './buttonUp.Js';
+
 const apiService = new ApiService();
 const debounce = require('lodash.debounce');
 const moviesList = document.querySelector('.home-list');
@@ -224,3 +226,8 @@ async function renderMovieInfo(movieID) {
     refs.btnAddToWatched.addEventListener('click', addToWatched);
     refs.btnAddToQueue.addEventListener('click', addToQueue);
 }
+
+
+
+const btnUp = document.querySelector('.btnUp');
+btnUp.addEventListener('click', upButtonHandler);
