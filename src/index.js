@@ -152,17 +152,34 @@ function renderGenres(genres, movies) {
 
 function addToWatched(e) {
   const filmName = e.currentTarget.dataset.id;
+  const index = watchedArray.indexOf(filmName);
 
-  watchedArray = [watchedArray];
-  watchedArray.push(`${filmName}`);
+  if (index === -1){
+    watchedArray.push(filmName);  
+      //повесить добавлено
+  }
+  else{
+    watchedArray.splice(index, 1);
+    // повесить убрано
+  }
 
-  localStorage.setItem('WATCHED_KEY', JSON.stringify(`${watchedArray}`));
+  localStorage.setItem('WATCHED_KEY', JSON.stringify(watchedArray));
 }
 function addToQueue(e) {
   const filmName = e.currentTarget.dataset.id;
-  queueArray = [queueArray];
-  queueArray.push(`${filmName}`);
-  localStorage.setItem('QUEUE_KEY', JSON.stringify(`${queueArray}`));}
+  const index = queueArray.indexOf(filmName);
+
+  if (index === -1){
+    queueArray.push(filmName); 
+      //повесить добавлено
+  }
+  else{
+    queueArray.splice(index, 1);
+    // повесить убрано
+  }
+
+  localStorage.setItem('QUEUE_KEY', JSON.stringify(queueArray));
+}
 
 function openModalWindow() {
     modalWindow.classList.remove("visually-hidden");
