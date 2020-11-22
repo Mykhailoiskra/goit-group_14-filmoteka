@@ -16,33 +16,16 @@
       crossorigin="anonymous"
     />
 
-<!-- <style>
-.loader {
-  border: 16px solid #f3f3f3;
-  border-radius: 50%;
-  border-top: 16px solid blue;
-  border-bottom: 16px solid blue;
-  width: 120px;
-  height: 120px;
-  -webkit-animation: spin 2s linear infinite;
-  animation: spin 2s linear infinite;
-}
-
-@-webkit-keyframes spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-</style> -->
 
   </head>
     <!-- Скрипт идёт последним в разметке. В нём уже подключен главный SASS-файл. -->
 =======
   <body>
+
+<div class="mask">
+  <div class="loader"></div>
+</div>
+
     <header class="header">
       <div class="header-container">
         <div class="logo-container">
@@ -126,15 +109,7 @@
 </div>
 
     <script src="./index.js"></script>
-
-    <script>
-  $(window).on('load', function () {
-    $preloader = $('.loaderArea'),
-      $loader = $preloader.find('.loader');
-    $loader.fadeOut();
-    $preloader.delay(350).fadeOut('slow');
-  });
-</script>
+<script src="./spinner.js"></script>
 
   </body>
 </html>
