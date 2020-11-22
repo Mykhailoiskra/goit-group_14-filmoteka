@@ -1,31 +1,28 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MY LIBRARY</title>
-  </head>
 
-  <body>
-    <header class="header">
-      <div class="header-library-container">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MY LIBRARY</title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="header-library-container">
+      <div class="header-top-container">
         <div class="logo-container">
           <a class="header-link" href="./index.html">
-            <img
-              class="header-img"
-              src="./img/film.png"
-              alt="logo"
-              width="22"
-              height="22"
-            />
+            <img class="header-img" src="./img/film.png" alt="logo" width="22" height="22" />
             <h1 class="header-text">Filmoteka</h1>
           </a>
         </div>
+
         <!-- кнопки предпочтений -->
         <nav class="preference-buttons">
-          <button class="header-watched" type="button">Watched</button>
+          <button class="header-watched header-btn" type="button" data-action="watched">Watched</button>
 
-          <button class="header-queue" type="button">queue</button>
+          <button class="header-queue header-btn" type="button" data-action="queue">queue</button>
         </nav>
 
         <!-- ////////////////////////////// -->
@@ -39,24 +36,26 @@
       </div>
     </header>
     <main class="main">
-      <section>
-        <div class="main-container">
+      <div class="backdrop visually-hidden" data-modal></div>
+        
           <ul class="home-list"></ul>
-        </div>
-      </section>
+      
+      
     </main>
-    <footer>
-      <div class="footer-container">
-        <p class="footer-text-first-part">© 2020 | All Rights Reserved |</p>
-        <div class="footer-copyrights">
-          <p class="footer-text-second-part">Developed with</p>
-          <img class="footer-img" src="./img/heart.png" alt="сердце" />
-          <p class="footer-text">
-            by <a class="footer-link" href="#">GoIT Students</a>
-          </p>
-        </div>
+   
+  <footer>
+    <div class="footer-container">
+      <p class="footer-text-first-part">© 2020 | All Rights Reserved |</p>
+      <div class="footer-copyrights">
+        <p class="footer-text-second-part">Developed with</p>
+        <img class="footer-img" src="./img/heart.png" alt="сердце" />
+        <p class="footer-text">
+          by <a class="footer-link" href="#">GoIT Students</a>
+        </p>
       </div>
-    </footer>
-    <script src="./my-library.js"></script>
-  </body>
+    </div>
+  </footer>
+  <script src="./my-library.js"></script>
+</body>
+
 </html>

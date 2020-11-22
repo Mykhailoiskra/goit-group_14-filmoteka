@@ -1,8 +1,8 @@
 .header-library-container {
-  position: relative;
-  display: flex;
+  // position: relative;
+  // display: flex;
   // min-width: 100%;
-  padding: 0 71px;
+  // padding: 0 71px;
   box-sizing: border-box;
   margin-left: auto;
   margin-right: auto;
@@ -14,7 +14,7 @@
   @media screen and (max-width: 767px) {
     background-image: url('../img/my-library_320.jpg');
     max-width: 320px;
-    padding: 0 21px;
+    padding: 0 20px;
   }
 
   @media screen and (min-width: 768px) {
@@ -30,19 +30,21 @@
 }
 
 .preference-buttons {
-  margin-top: 121px;
+  display: flex;
+  justify-content: center;
+  margin-top: 41px;
   @media screen and (max-width: 767px) {
-    display: flex;
+    justify-content: space-between;
   }
 }
 
-.header-watched {
+.header-btn {
   width: 136px;
   height: 44px;
   cursor: pointer;
   color: $headerMainColor;
   padding: 14px 0;
-  margin-right: 15px;
+  // margin-right: 15px;
   background-color: rgba(0, 0, 0, 0);
   border-radius: 5px;
   border: 1px solid $headerMainColor;
@@ -55,19 +57,22 @@
   text-align: center;
   text-transform: uppercase;
   @media screen and (max-width: 767px) {
-    width: 129.53px;
-    position: absolute;
-    left: 168px;
-    top: 121px;
+    // width: 129.53px;
+    // position: absolute;
+    // left: 168px;
+    // top: 121px;
+    width: 130px;
+  }
+}
+.header-btn + .header-btn {
+  @media screen and (min-width: 768px) {
+    margin-left: 15px;
   }
 }
 
-.header-watched:hover,
-.header-queue:hover,
-.header-watched:focus,
-.header-queue:focus,
-.header-watched:active,
-.header-queue:active {
+.header-btn:hover,
+.header-btn:focus,
+.header-btn:active {
   background: $accentColor;
   border: $accentColor;
   outline: none;
@@ -96,31 +101,31 @@
   }
 }
 
-.header-queue {
-  width: 136px;
-  height: 44px;
-  text-align: center;
-  cursor: pointer;
-  color: $headerMainColor;
-  padding: 14px 0;
-  background-color: rgba(0, 0, 0, 0);
-  border-radius: 5px;
-  border: 1px solid $headerMainColor;
-  box-sizing: border-box;
-  // outline: none;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 1.33;
-  align-items: center;
-  text-align: center;
-  text-transform: uppercase;
-  @media screen and (max-width: 767px) {
-    width: 129.53px;
-    position: absolute;
-    top: 121px;
-    right: 168px;
-  }
-}
+// .header-queue {
+//   width: 136px;
+//   height: 44px;
+//   text-align: center;
+//   cursor: pointer;
+//   color: $headerMainColor;
+//   padding: 14px 0;
+//   background-color: rgba(0, 0, 0, 0);
+//   border-radius: 5px;
+//   border: 1px solid $headerMainColor;
+//   box-sizing: border-box;
+//   // outline: none;
+//   font-weight: 500;
+//   font-size: 12px;
+//   line-height: 1.33;
+//   align-items: center;
+//   text-align: center;
+//   text-transform: uppercase;
+//   @media screen and (max-width: 767px) {
+//     width: 129.53px;
+//     position: absolute;
+//     top: 121px;
+//     right: 168px;
+//   }
+// }
 
 .home-card-rating {
   width: 36px;

@@ -19,99 +19,65 @@
 
   </head>
     <!-- Скрипт идёт последним в разметке. В нём уже подключен главный SASS-файл. -->
-=======
-  <body>
-
-<div class="mask">
+<body>
+  <div class="mask">
   <div class="loader"></div>
 </div>
-
-    <header class="header">
-      <div class="header-container">
-        <div class="logo-container">
-          <a class="header-link" href="./index.html">
-            <img
-              class="header-img"
-              src="./img/film.png"
-              alt="logo"
-              width="22"
-              height="22"
-            />
-            <h1 class="header-text">Filmoteka</h1>
-          </a>
-        </div>
-        <form class="header-form">
-          <div class="group">
-            <input
-              type="text"
-              required
-              type="text"
-              name="query"
-              placeholder="Movie search"
-            />
-            <span class="bar"></span>
-          </div>
-        </form>
-
+  <header class="header">
+    <div class="header-container">
+      <div class="header-top-container">
+        <a class="header-link" href="./index.html">
+          <img class="header-img" src="./img/film.png" alt="logo" width="22" height="22" />
+          <h1 class="header-text">Filmoteka</h1>
+        </a>
         <nav class="nav-container">
           <!-- Форма для перехода по кнопке на нужную страницу -->
           <!-- <form action="./index.html"> -->
-          <button class="header-home current" type="button">HOME</button>
+          <button class="header-home current" type="button">Home</button>
           <!-- </form> -->
           <!-- <form action="./html/My_Library.html"> -->
-          <a href="./my-library.html" class="header-library">MY LIBRARY</a>
+          <a href="./my-library.html" class="header-library">my library</a>
           <!-- </form> -->
         </nav>
       </div>
-    </header>
-    <main class="main">
-      <section>
-        <div class="main-container">
-          <ul class="home-list">
-            <!-- <li class="home-list-card">
-              <img
-                class="home-list-img"
-                src="/img/example.jpg"
-                alt=""
-                data-id=""
-                data-vote=""
-              />
-              <div class="home-card-name">
-              <p class="home-card-title">GREYHOUND</p>
-              <p class="home-card-сategory">Drama, Action | 2020</p>
-              </div>
-            </li> -->
-          </ul>
+
+      <form class="header-form">
+        <div class="group">
+          <input id="query-input" type="text" required type="text" name="query" placeholder="Movie search" />
+          <span class="bar"></span>
+          <p class="query-warning visually-hidden">Search result not successful. Enter the correct movie name and</p>
         </div>
-      </section>
-    </main>
-    <footer>
-      <div class="footer-container">
-        <p class="footer-text-first-part">© 2020 | All Rights Reserved | </p>
-        <div class="footer-copyrights">
+      </form>
+    </div>
+  </header>
+         
+    <main class="main">
+
+      <div class="backdrop visually-hidden" data-modal></div>
+      
+      <ul class="home-list"></ul>
+       <div class="pagination-buttons">
+  </main>
+  <footer>
+    <div class="footer-container">
+      <p class="footer-text-first-part">© 2020 | All Rights Reserved | </p>
+      <div class="footer-copyrights">
         <p class="footer-text-second-part">Developed with</p>
         <img class="footer-img" src="./img/heart.png" alt="сердце" />
         <p class="footer-text">
           by <a class="footer-link" href="#">GoIT Students</a>
         </p>
-        </div>
       </div>
     </footer>
-        <!-- Так добавляются фрагменты в главные HTML-файлы страниц. -->
-    <button type="button" class="btn btn-primary button" data-action="add-to-watched" data-id="566577"><span class="label">ADD TO WATCHED</span>
-    </button>
-    <button type="button" class="btn btn-primary button" data-action="add-to-queue" data-id="566574"><span class="label" >add to queue</span>
-    </button>
-
-    <!-- Spinner -->
+         <!-- Spinner -->
 <div class="loaderArea">
    <div class="loader visually-hidden" data-action="loader"></div>
 </div>
+   <button type="button" class="btnUp visually-hidden"></button>
+  <!-- Так добавляются фрагменты в главные HTML-файлы страниц. -->
 
-    <script src="./index.js"></script>
-<script src="./spinner.js"></script>
+  <script src="./index.js"></script>
+  <script src="./spinner.js"></script>
+</body>
 
-  </body>
 </html>
-
-
