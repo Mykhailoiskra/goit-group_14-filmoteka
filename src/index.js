@@ -27,9 +27,9 @@ let watchedArray = localStorage.getItem('WATCHED_KEY')
   : [];
 let queueArray = localStorage.getItem('QUEUE_KEY')
   ? JSON.parse(localStorage.getItem('QUEUE_KEY'))
-  : [];
-
-// слушатели добавлять при открытии большой карточки фильма и снимать при закрытии
+    : [];
+  
+    // слушатели добавлять при открытии большой карточки фильма и снимать при закрытии
 // при нажимании на любую из этих кнопок она далжна становиться неактивной
 // refs.btnAddToWatched.addEventListener('click', addToWatched);
 // refs.btnAddToQueue.addEventListener('click', addToQueue);
@@ -152,34 +152,17 @@ function renderGenres(genres, movies) {
 
 function addToWatched(e) {
   const filmName = e.currentTarget.dataset.id;
-  const index = watchedArray.indexOf(filmName);
 
-  if (index === -1){
-    watchedArray.push(filmName);  
-      //повесить добавлено
-  }
-  else{
-    watchedArray.splice(index, 1);
-    // повесить убрано
-  }
-  
-  localStorage.setItem('WATCHED_KEY', JSON.stringify(watchedArray));
+  watchedArray = [watchedArray];
+  watchedArray.push(`${filmName}`);
+
+  localStorage.setItem('WATCHED_KEY', JSON.stringify(`${watchedArray}`));
 }
 function addToQueue(e) {
   const filmName = e.currentTarget.dataset.id;
-  const index = queueArray.indexOf(filmName);
-
-  if (index === -1){
-    queueArray.push(filmName); 
-      //повесить добавлено
-  }
-  else{
-    queueArray.splice(index, 1);
-    // повесить убрано
-  }
-  
-  localStorage.setItem('QUEUE_KEY', JSON.stringify(queueArray));
-}
+  queueArray = [queueArray];
+  queueArray.push(`${filmName}`);
+  localStorage.setItem('QUEUE_KEY', JSON.stringify(`${queueArray}`));}
 
 function openModalWindow() {
     modalWindow.classList.remove("visually-hidden");
