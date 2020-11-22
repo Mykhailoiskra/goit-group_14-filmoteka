@@ -20,31 +20,31 @@
 <body>
   <header class="header">
     <div class="header-container">
-      <div class="logo-container">
+      <div class="header-top-container">
         <a class="header-link" href="./index.html">
           <img class="header-img" src="./img/film.png" alt="logo" width="22" height="22" />
           <h1 class="header-text">Filmoteka</h1>
         </a>
+        <nav class="nav-container">
+          <!-- Форма для перехода по кнопке на нужную страницу -->
+          <!-- <form action="./index.html"> -->
+          <button class="header-home current" type="button">Home</button>
+          <!-- </form> -->
+          <!-- <form action="./html/My_Library.html"> -->
+          <a href="./my-library.html" class="header-library">my library</a>
+          <!-- </form> -->
+        </nav>
       </div>
+
       <form class="header-form">
         <div class="group">
           <input id="query-input" type="text" required type="text" name="query" placeholder="Movie search" />
           <span class="bar"></span>
+          <p class="query-warning visually-hidden">Search result not successful. Enter the correct movie name and</p>
         </div>
       </form>
-
-      <nav class="nav-container">
-        <!-- Форма для перехода по кнопке на нужную страницу -->
-        <!-- <form action="./index.html"> -->
-        <button class="header-home current" type="button">HOME</button>
-        <!-- </form> -->
-        <!-- <form action="./html/My_Library.html"> -->
-        <a href="./my-library.html" class="header-library">MY LIBRARY</a>
-        <!-- </form> -->
-      </nav>
     </div>
   </header>
-
          
     <main class="main">
 
@@ -52,7 +52,6 @@
       
       <ul class="home-list"></ul>
        <div class="pagination-buttons">
-
   </main>
   <footer>
     <div class="footer-container">

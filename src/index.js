@@ -7,6 +7,8 @@ import movieInfo from './templates/movie-info.hbs';
 const apiService = new ApiService();
 const debounce = require('lodash.debounce');
 const moviesList = document.querySelector('.home-list');
+const modalWindow = document.querySelector('[data-modal]');
+const queryWornRef = document.querySelector('.query-warning');
 const queryInputRef = document.getElementById('query-input');
 const modalWindow = document.querySelector('[data-modal]');
 const paginationContainer = document.getElementsByClassName(
@@ -17,10 +19,12 @@ const paginationContainer = document.getElementsByClassName(
 // data-action="add-to-queue" на одноименную кнопку фильма.
 // на эти же кнопки необходимо записывать в data-id - id открытого фильма
 
+
 // const refs = {
 //   btnAddToWatched: document.querySelector('[data-action="add-to-watched"]'),
 //   btnAddToQueue: document.querySelector('[data-action="add-to-queue"]'),
 // };
+
 
 let watchedArray = localStorage.getItem('WATCHED_KEY')
   ? JSON.parse(localStorage.getItem('WATCHED_KEY'))
@@ -35,6 +39,7 @@ let queueArray = localStorage.getItem('QUEUE_KEY')
 // refs.btnAddToQueue.addEventListener('click', addToQueue);
 
 window.addEventListener('load', onLoad());
+moviesList.addEventListener('click', onMovieClick);
 queryInputRef.addEventListener('input', debounce(onQueryInput, 1000));
 moviesList.addEventListener('click', onMovieClick);
 
@@ -103,18 +108,22 @@ function onLoad() {
 }
 function onQueryInput(e) {
   e.preventDefault();
+  queryWornRef.classList.add('visually-hidden');
   if (e.target.value.length > 0) {
     Promise.all([
       apiService.fetchMoviesByKeyWords(e.target.value),
       apiService.fetchGenres(),
     ])
       .then(([movies, genres]) => {
-        const formatedMoviesWithGenreNames = renderGenres(genres, movies);
-        return formatedMoviesWithGenreNames;
+        if (movies.length > 0) {
+          const formatedMoviesWithGenreNames = renderGenres(genres, movies);
+          return formatedMoviesWithGenreNames;
+        } else queryWornRef.classList.remove('visually-hidden');
       })
       .then(results => makeMovieCardsMarkup(results));
   }
 }
+
 
 function onMovieClick(event) {
      if (event.target.nodeName !== 'IMG') {
@@ -130,6 +139,7 @@ function onMovieClick(event) {
 });
     
 }
+
 
 function makeMovieCardsMarkup(results) {
   const markup = movieCards(results);
@@ -197,7 +207,9 @@ function closeModalWindow() {
 function onOverlayClick(evt) {
   if (evt.target === evt.currentTarget) {
     closeModalWindow();
+
     }
+
 }
 
 function onKeysPress(evt) {

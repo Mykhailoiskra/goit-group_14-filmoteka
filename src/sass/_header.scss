@@ -1,3 +1,6 @@
+body {
+  margin: 0;
+}
 .header {
   width: 100%;
   top: 0px;
@@ -7,10 +10,9 @@
 }
 
 .header-container {
-  display: flex;
+  // display: flex;
   // min-width: 100%;
-  padding: 0 71px;
-  box-sizing: border-box;
+
   margin-left: auto;
   margin-right: auto;
   width: 1024px;
@@ -21,7 +23,7 @@
   @media screen and (max-width: 767px) {
     background-image: url('../img/Overlay_320.jpg');
     max-width: 320px;
-    padding: 0 21px;
+    padding: 0 20px;
   }
 
   @media screen and (min-width: 768px) {
@@ -108,14 +110,14 @@
 }
 
 .nav-container {
-  margin-top: 58px;
+  // margin-top: 58px;
   display: flex;
   align-items: center;
 
   justify-content: space-between;
   align-items: center;
   @media screen and (max-width: 767px) {
-    width: 167px;
+    // width: 167px;
   }
 }
 
@@ -132,6 +134,8 @@
   font-size: 12px;
   line-height: 1.16;
   padding: 3px 0;
+  white-space: nowrap;
+  text-transform: uppercase;
   // margin-bottom: 158px;
   border: 0;
   background-color: rgba(0, 0, 0, 0);
@@ -143,7 +147,7 @@
     bottom: 0;
     width: 100%;
     border-radius: 2px;
-    height: 4px;
+    height: 3px;
     background-color: $accentColor;
     transform: scaleX(1);
     transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -166,6 +170,7 @@
   padding: 3px 0;
   // margin-bottom: 158px;
   margin-right: 39px;
+  text-transform: uppercase;
   border: 0;
   background-color: rgba(0, 0, 0, 0);
   &.current::after {
@@ -202,12 +207,13 @@
 
 .header-form {
   position: relative;
-  display: flex;
-  height: 133px;
-  align-items: center;
-  justify-content: center;
+  padding-top: 43px;
+  // display: flex;
+  // height: 133px;
+  // align-items: center;
+  // justify-content: center;
   @media screen and (max-width: 767px) {
-    position: absolute;
+    // position: absolute;
   }
 }
 
@@ -215,7 +221,7 @@
   display: flex;
   width: 148px;
   height: 35px;
-  margin-top: 41px;
+  // margin-top: 41px;
   align-items: center;
   flex-wrap: nowrap;
 }
@@ -228,6 +234,7 @@
 ////////////////////////////////
 .group {
   position: relative;
+  // padding-top: 133px;
 }
 
 input {
@@ -236,7 +243,7 @@ input {
   padding-bottom: 4px;
   display: block;
   width: 336px;
-  margin-top: 133px;
+  margin: 0 auto;
   outline: none;
   border: 0px;
   border-bottom: 0.5px solid $headerMainColor;
@@ -268,6 +275,7 @@ input:valid ~ label {
 /* BOTTOM BARS ================================= */
 .bar {
   position: relative;
+  margin: 0 auto;
   display: block;
   width: 336px;
   @media screen and (max-width: 767px) {
@@ -277,7 +285,7 @@ input:valid ~ label {
 .bar:before,
 .bar:after {
   content: '';
-  height: 2px;
+  height: 1px;
   width: 0;
   bottom: 0;
   position: absolute;
@@ -304,3 +312,20 @@ input.icon {
 }
 
 // animation wrapper
+
+.header-top-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 100%;
+  padding-top: 41px;
+}
+.query-warning {
+  color: #ff001b;
+  margin: 0;
+  margin-top: 22px;
+  width: 100%;
+  @media screen and (min-width: 768px) {
+    text-align: center;
+  }
+}
