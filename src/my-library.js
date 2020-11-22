@@ -6,7 +6,8 @@ const apiService = new ApiService();
 // const paginationContainer = document.getElementsByClassName(
 //   'pagination-buttons',
 // )[0];
-import movieCards from './templates/movie-card.hbs';
+// import movieCards from './templates/movie-card.hbs';
+import movieLibrary from './templates/movie-library.hbs'; 
 import movieInfo from './templates/movie-info.hbs';
 const modalWindow = document.querySelector('[data-modal]');
 
@@ -33,7 +34,7 @@ function onLoad(){
   showWatched();
 }
 function makeMovieCardsMarkup(results) {
-  const markup = movieCards(results);
+  const markup = movieLibrary(results);
     refs.moviesList.innerHTML = markup;
   }
 
