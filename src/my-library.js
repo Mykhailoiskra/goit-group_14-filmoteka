@@ -15,9 +15,14 @@ const refs = {
     moviesList : document.querySelector('.home-list'),
 }
 
+window.addEventListener('load', onLoad());
 refs.btnWatched.addEventListener('click', showWatched);
 refs.btnQueue.addEventListener('click', showQueue);
 
+
+function onLoad(){
+  showWatched();
+}
 function makeMovieCardsMarkup(results) {
   const markup = movieCards(results);
     refs.moviesList.innerHTML = markup;
