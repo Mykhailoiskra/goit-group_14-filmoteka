@@ -202,7 +202,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./../img/Overlay_320.jpg":[["Overlay_320.22aa2b85.jpg","img/Overlay_320.jpg"],"img/Overlay_320.jpg"],"./../img/onerlay_768.jpg":[["onerlay_768.10b8ab49.jpg","img/onerlay_768.jpg"],"img/onerlay_768.jpg"],"./../img/overlay.jpg":[["overlay.e35c6e3f.jpg","img/overlay.jpg"],"img/overlay.jpg"],"./../img/search.png":[["search.42b7d05d.png","img/search.png"],"img/search.png"],"./../img/my-library_320.jpg":[["my-library_320.5195f01b.jpg","img/my-library_320.jpg"],"img/my-library_320.jpg"],"./../img/my-library_768.jpg":[["my-library_768.c92362a8.jpg","img/my-library_768.jpg"],"img/my-library_768.jpg"],"./../img/my-library.jpg":[["my-library.550d45c4.jpg","img/my-library.jpg"],"img/my-library.jpg"],"./../img/arrow1.png":[["arrow1.1b1aebe0.png","img/arrow1.png"],"img/arrow1.png"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"api-service.js":[function(require,module,exports) {
+},{"./..\\img\\Overlay_320.jpg":[["Overlay_320.22aa2b85.jpg","img/Overlay_320.jpg"],"img/Overlay_320.jpg"],"./..\\img\\onerlay_768.jpg":[["onerlay_768.10b8ab49.jpg","img/onerlay_768.jpg"],"img/onerlay_768.jpg"],"./..\\img\\overlay.jpg":[["overlay.e35c6e3f.jpg","img/overlay.jpg"],"img/overlay.jpg"],"./..\\img\\search.png":[["search.42b7d05d.png","img/search.png"],"img/search.png"],"./..\\img\\my-library_320.jpg":[["my-library_320.5195f01b.jpg","img/my-library_320.jpg"],"img/my-library_320.jpg"],"./..\\img\\my-library_768.jpg":[["my-library_768.c92362a8.jpg","img/my-library_768.jpg"],"img/my-library_768.jpg"],"./..\\img\\my-library.jpg":[["my-library.550d45c4.jpg","img/my-library.jpg"],"img/my-library.jpg"],"./..\\img\\arrow1.png":[["arrow1.1b1aebe0.png","img/arrow1.png"],"img/arrow1.png"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"api-service.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2312,7 +2312,7 @@ const templateFunction = _handlebars.default.template({
       return undefined;
     };
 
-    return "<li class=\"home-list-card\">\n    <img class=\"home-list-img\" src=\"https://image.tmdb.org/t/p/w342" + alias4((helper = (helper = lookupProperty(helpers, "poster_path") || (depth0 != null ? lookupProperty(depth0, "poster_path") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+    return "<li class=\"home-list-card\">\r\n    <img class=\"home-list-img\" src=\"https://image.tmdb.org/t/p/w342" + alias4((helper = (helper = lookupProperty(helpers, "poster_path") || (depth0 != null ? lookupProperty(depth0, "poster_path") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
       "name": "poster_path",
       "hash": {},
       "data": data,
@@ -2326,7 +2326,7 @@ const templateFunction = _handlebars.default.template({
           "column": 82
         }
       }
-    }) : helper)) + "\" alt=\"movie picture\"\n        data-id=\"" + alias4((helper = (helper = lookupProperty(helpers, "id") || (depth0 != null ? lookupProperty(depth0, "id") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+    }) : helper)) + "\" alt=\"movie picture\"\r\n        data-id=\"" + alias4((helper = (helper = lookupProperty(helpers, "id") || (depth0 != null ? lookupProperty(depth0, "id") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
       "name": "id",
       "hash": {},
       "data": data,
@@ -2340,7 +2340,7 @@ const templateFunction = _handlebars.default.template({
           "column": 23
         }
       }
-    }) : helper)) + "\" />\n    <p class=\"home-card-title\">" + alias4((helper = (helper = lookupProperty(helpers, "original_title") || (depth0 != null ? lookupProperty(depth0, "original_title") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+    }) : helper)) + "\" />\r\n    <p class=\"home-card-title\">" + alias4((helper = (helper = lookupProperty(helpers, "original_title") || (depth0 != null ? lookupProperty(depth0, "original_title") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
       "name": "original_title",
       "hash": {},
       "data": data,
@@ -2354,7 +2354,7 @@ const templateFunction = _handlebars.default.template({
           "column": 49
         }
       }
-    }) : helper)) + "</p>\n    <div class=\"card-list\">\n        <p class=\"home-card-сategory\">\n" + ((stack1 = lookupProperty(helpers, "each").call(alias1, depth0 != null ? lookupProperty(depth0, "genres") : depth0, {
+    }) : helper)) + "</p>\r\n    <div class=\"card-list\">\r\n        <p class=\"home-card-сategory\">\r\n" + ((stack1 = lookupProperty(helpers, "each").call(alias1, depth0 != null ? lookupProperty(depth0, "genres") : depth0, {
       "name": "each",
       "hash": {},
       "fn": container.program(2, data, 0),
@@ -2370,7 +2370,7 @@ const templateFunction = _handlebars.default.template({
           "column": 21
         }
       }
-    })) != null ? stack1 : "") + "\n            | " + alias4((helper = (helper = lookupProperty(helpers, "release_date") || (depth0 != null ? lookupProperty(depth0, "release_date") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+    })) != null ? stack1 : "") + "\r\n            | " + alias4((helper = (helper = lookupProperty(helpers, "release_date") || (depth0 != null ? lookupProperty(depth0, "release_date") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
       "name": "release_date",
       "hash": {},
       "data": data,
@@ -2384,7 +2384,7 @@ const templateFunction = _handlebars.default.template({
           "column": 30
         }
       }
-    }) : helper)) + "</p>\n        <p class=\"home-card-rating\">" + alias4((helper = (helper = lookupProperty(helpers, "vote_average") || (depth0 != null ? lookupProperty(depth0, "vote_average") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+    }) : helper)) + "</p>\r\n        <p class=\"home-card-rating\">" + alias4((helper = (helper = lookupProperty(helpers, "vote_average") || (depth0 != null ? lookupProperty(depth0, "vote_average") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
       "name": "vote_average",
       "hash": {},
       "data": data,
@@ -2398,7 +2398,7 @@ const templateFunction = _handlebars.default.template({
           "column": 52
         }
       }
-    }) : helper)) + "</p>\n    </div>\n</li>\n";
+    }) : helper)) + "</p>\r\n    </div>\r\n</li>\r\n";
   },
   "2": function (container, depth0, helpers, partials, data) {
     var lookupProperty = container.lookupProperty || function (parent, propertyName) {
@@ -2409,7 +2409,7 @@ const templateFunction = _handlebars.default.template({
       return undefined;
     };
 
-    return "            " + container.escapeExpression(container.lambda(depth0 != null ? lookupProperty(depth0, "name") : depth0, depth0)) + "\n";
+    return "            " + container.escapeExpression(container.lambda(depth0 != null ? lookupProperty(depth0, "name") : depth0, depth0)) + "\r\n";
   },
   "compiler": [8, ">= 4.3.0"],
   "main": function (container, depth0, helpers, partials, data) {
@@ -2482,7 +2482,7 @@ const templateFunction = _handlebars.default.template({
           "column": 66
         }
       }
-    }) : helper)) + ", </span>\n";
+    }) : helper)) + ", </span>\r\n";
   },
   "compiler": [8, ">= 4.3.0"],
   "main": function (container, depth0, helpers, partials, data) {
@@ -2500,7 +2500,7 @@ const templateFunction = _handlebars.default.template({
       return undefined;
     };
 
-    return "<div class=\"card-details-markup\">\n    <div class=\"card-details-img\">\n        <img src=\"https://image.tmdb.org/t/p/w400" + alias4((helper = (helper = lookupProperty(helpers, "poster_path") || (depth0 != null ? lookupProperty(depth0, "poster_path") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+    return "<div class=\"card-details-markup\">\r\n    <div class=\"card-details-img\">\r\n        <img src=\"https://image.tmdb.org/t/p/w400" + alias4((helper = (helper = lookupProperty(helpers, "poster_path") || (depth0 != null ? lookupProperty(depth0, "poster_path") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
       "name": "poster_path",
       "hash": {},
       "data": data,
@@ -2528,7 +2528,7 @@ const templateFunction = _handlebars.default.template({
           "column": 80
         }
       }
-    }) : helper)) + "\" class=\"card-image\" />\n    </div>\n    <div class=\"card-details-info\">\n        <h2 class=\"card-details-title\">" + alias4((helper = (helper = lookupProperty(helpers, "title") || (depth0 != null ? lookupProperty(depth0, "title") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+    }) : helper)) + "\" class=\"card-image\" />\r\n    </div>\r\n    <div class=\"card-details-info\">\r\n        <h2 class=\"card-details-title\">" + alias4((helper = (helper = lookupProperty(helpers, "title") || (depth0 != null ? lookupProperty(depth0, "title") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
       "name": "title",
       "hash": {},
       "data": data,
@@ -2542,7 +2542,7 @@ const templateFunction = _handlebars.default.template({
           "column": 48
         }
       }
-    }) : helper)) + "</h2>\n        <ul class=\"card-details-list\">\n            <li class=\"card-details-item\">\n                <p class=\"card-details-item-about\">Vote / Votes</p>\n                <p class=\"card-details-item-descript\">\n                    <span class=\"card-details-item-vote\">" + alias4((helper = (helper = lookupProperty(helpers, "vote_average") || (depth0 != null ? lookupProperty(depth0, "vote_average") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+    }) : helper)) + "</h2>\r\n        <ul class=\"card-details-list\">\r\n            <li class=\"card-details-item\">\r\n                <p class=\"card-details-item-about\">Vote / Votes</p>\r\n                <p class=\"card-details-item-descript\">\r\n                    <span class=\"card-details-item-vote\">" + alias4((helper = (helper = lookupProperty(helpers, "vote_average") || (depth0 != null ? lookupProperty(depth0, "vote_average") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
       "name": "vote_average",
       "hash": {},
       "data": data,
@@ -2556,7 +2556,7 @@ const templateFunction = _handlebars.default.template({
           "column": 73
         }
       }
-    }) : helper)) + "</span>\n                    <span>/</span>\n                    <span class=\"card-details-item-votes\">" + alias4((helper = (helper = lookupProperty(helpers, "vote_count") || (depth0 != null ? lookupProperty(depth0, "vote_count") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+    }) : helper)) + "</span>\r\n                    <span>/</span>\r\n                    <span class=\"card-details-item-votes\">" + alias4((helper = (helper = lookupProperty(helpers, "vote_count") || (depth0 != null ? lookupProperty(depth0, "vote_count") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
       "name": "vote_count",
       "hash": {},
       "data": data,
@@ -2570,7 +2570,7 @@ const templateFunction = _handlebars.default.template({
           "column": 72
         }
       }
-    }) : helper)) + "</span>\n                </p>\n            </li>\n            <li class=\"card-details-item\">\n                <p class=\"card-details-item-about\">Popularity</p>\n                <p class=\"card-details-item-descript\">" + alias4((helper = (helper = lookupProperty(helpers, "popularity") || (depth0 != null ? lookupProperty(depth0, "popularity") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+    }) : helper)) + "</span>\r\n                </p>\r\n            </li>\r\n            <li class=\"card-details-item\">\r\n                <p class=\"card-details-item-about\">Popularity</p>\r\n                <p class=\"card-details-item-descript\">" + alias4((helper = (helper = lookupProperty(helpers, "popularity") || (depth0 != null ? lookupProperty(depth0, "popularity") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
       "name": "popularity",
       "hash": {},
       "data": data,
@@ -2584,7 +2584,7 @@ const templateFunction = _handlebars.default.template({
           "column": 68
         }
       }
-    }) : helper)) + "</p>\n            </li>\n            <li class=\"card-details-item\">\n                <p class=\"card-details-item-about\">Original Title</p>\n\n                <p class=\"card-details-item-descript\">" + alias4((helper = (helper = lookupProperty(helpers, "original_title") || (depth0 != null ? lookupProperty(depth0, "original_title") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+    }) : helper)) + "</p>\r\n            </li>\r\n            <li class=\"card-details-item\">\r\n                <p class=\"card-details-item-about\">Original Title</p>\r\n\r\n                <p class=\"card-details-item-descript\">" + alias4((helper = (helper = lookupProperty(helpers, "original_title") || (depth0 != null ? lookupProperty(depth0, "original_title") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
       "name": "original_title",
       "hash": {},
       "data": data,
@@ -2598,7 +2598,7 @@ const templateFunction = _handlebars.default.template({
           "column": 72
         }
       }
-    }) : helper)) + "</p>\n            </li>\n            <li class=\"card-details-item\">\n                <p class=\"card-details-item-about\">Genre</p>\n                <p class=\"card-details-item-descript\">\n" + ((stack1 = lookupProperty(helpers, "each").call(alias1, depth0 != null ? lookupProperty(depth0, "genres") : depth0, {
+    }) : helper)) + "</p>\r\n            </li>\r\n            <li class=\"card-details-item\">\r\n                <p class=\"card-details-item-about\">Genre</p>\r\n                <p class=\"card-details-item-descript\">\r\n" + ((stack1 = lookupProperty(helpers, "each").call(alias1, depth0 != null ? lookupProperty(depth0, "genres") : depth0, {
       "name": "each",
       "hash": {},
       "fn": container.program(1, data, 0),
@@ -2614,7 +2614,7 @@ const templateFunction = _handlebars.default.template({
           "column": 29
         }
       }
-    })) != null ? stack1 : "") + "                </p>\n            </li>\n        </ul>\n        <p class=\"card-details-descript-title\">About</p>\n        <p class=\"card-details-descript-about\">" + alias4((helper = (helper = lookupProperty(helpers, "overview") || (depth0 != null ? lookupProperty(depth0, "overview") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+    })) != null ? stack1 : "") + "                </p>\r\n            </li>\r\n        </ul>\r\n        <p class=\"card-details-descript-title\">About</p>\r\n        <p class=\"card-details-descript-about\">" + alias4((helper = (helper = lookupProperty(helpers, "overview") || (depth0 != null ? lookupProperty(depth0, "overview") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
       "name": "overview",
       "hash": {},
       "data": data,
@@ -2628,7 +2628,7 @@ const templateFunction = _handlebars.default.template({
           "column": 59
         }
       }
-    }) : helper)) + "</p>\n        <div class=\"card-details-button-markup\">\n            <button class=\"modal-btn\" data-action=\"add-to-watched\" type=\"button\" data-id=\"" + alias4((helper = (helper = lookupProperty(helpers, "id") || (depth0 != null ? lookupProperty(depth0, "id") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+    }) : helper)) + "</p>\r\n        <div class=\"card-details-button-markup\">\r\n            <button class=\"modal-btn\" data-action=\"add-to-watched\" type=\"button\" data-id=\"" + alias4((helper = (helper = lookupProperty(helpers, "id") || (depth0 != null ? lookupProperty(depth0, "id") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
       "name": "id",
       "hash": {},
       "data": data,
@@ -2642,7 +2642,7 @@ const templateFunction = _handlebars.default.template({
           "column": 96
         }
       }
-    }) : helper)) + "\">add to\n                watched</button>\n            <button class=\"modal-btn\" data-action=\"add-to-queue\" type=\"button\" data-id=\"" + alias4((helper = (helper = lookupProperty(helpers, "id") || (depth0 != null ? lookupProperty(depth0, "id") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+    }) : helper)) + "\">add to\r\n                watched</button>\r\n            <button class=\"modal-btn\" data-action=\"add-to-queue\" type=\"button\" data-id=\"" + alias4((helper = (helper = lookupProperty(helpers, "id") || (depth0 != null ? lookupProperty(depth0, "id") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
       "name": "id",
       "hash": {},
       "data": data,
@@ -2656,7 +2656,7 @@ const templateFunction = _handlebars.default.template({
           "column": 94
         }
       }
-    }) : helper)) + "\">add to queue</button>\n        </div>\n    </div>\n</div>";
+    }) : helper)) + "\">add to queue</button>\r\n        </div>\r\n    </div>\r\n</div>";
   },
   "useData": true
 });
@@ -2844,7 +2844,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60743" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52366" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
