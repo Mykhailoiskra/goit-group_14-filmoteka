@@ -10,7 +10,6 @@ const moviesList = document.querySelector('.home-list');
 const modalWindow = document.querySelector('[data-modal]');
 const queryWornRef = document.querySelector('.query-warning');
 const queryInputRef = document.getElementById('query-input');
-const modalWindow = document.querySelector('[data-modal]');
 const paginationContainer = document.getElementsByClassName(
   'pagination-buttons',
 )[0];
@@ -160,21 +159,7 @@ function renderGenres(genres, movies) {
   });
 }
 
-function addToWatched(e) {
-  const filmName = e.currentTarget.dataset.id;
-  const index = watchedArray.indexOf(filmName);
 
-  if (index === -1){
-    watchedArray.push(filmName);  
-      //повесить добавлено
-  }
-  else{
-    watchedArray.splice(index, 1);
-    // повесить убрано
-  }
-
-  localStorage.setItem('WATCHED_KEY', JSON.stringify(watchedArray));
-}
 function addToQueue(e) {
   const filmName = e.currentTarget.dataset.id;
   const index = queueArray.indexOf(filmName);
