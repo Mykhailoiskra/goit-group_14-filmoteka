@@ -2,11 +2,13 @@ import './sass/main.scss';
 import ApiService from './api-service.js';
 
 const apiService = new ApiService();
-const modalWindow = document.querySelector('[data-modal]');
-const paginationContainer = document.getElementsByClassName(
-  'pagination-buttons',
-)[0];
+// const modalWindow = document.querySelector('[data-modal]');
+// const paginationContainer = document.getElementsByClassName(
+//   'pagination-buttons',
+// )[0];
 import movieCards from './templates/movie-card.hbs';
+
+let watchedMovies = [];
 
 const refs = {
     btnWatched : document.querySelector('[data-action="watched"]'),
@@ -18,19 +20,23 @@ refs.btnWatched.addEventListener('click', showWatched);
 // refs.btnQueue.addEventListener('click', showQueue);
 
 function makeMovieCardsMarkup(results) {
-    const markup = movieCards(results);
-    moviesList.innerHTML = markup;
+  const markup = movieCards(results);
+    refs.moviesList.innerHTML = markup;
   }
 
-function showWatched(){
+async function showWatched(){
     let watchedArray = localStorage.getItem('WATCHED_KEY')
   ? JSON.parse(localStorage.getItem('WATCHED_KEY'))
   : [];
 
-  console.log(watchedArray);
   for (let i = 0; i < watchedArray.length; i += 1){
-      console.log( apiService.fetchMovieById(Number(watchedArray[i])));
+    
+    await apiService.fetchMovieById(Number(watchedArray[i])).then(result => watchedMovies.push(result));
+    
 
-      
   }
+  console.log(watchedMovies);
+  makeMovieCardsMarkup(watchedMovies);
 }
+
+
